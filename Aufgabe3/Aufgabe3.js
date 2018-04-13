@@ -4,8 +4,11 @@ var Memoryspiel;
     var cardList = [];
     //Karteneingabe
     function EingabeKarten() {
+        // Eingabe vom Nutzer
         var Paare = prompt("Mit wie vielen Kartenpaaren möchtest du spielen? (2-26)");
+        // "Umwandlung von Eingabe in Variable
         var PaarSumme = parseInt(Paare);
+        //Konsolenausgabe
         console.log("EingabeKarten");
         return PaarSumme;
     }
@@ -16,6 +19,7 @@ var Memoryspiel;
         for (var i = 1; i <= x; i++) {
             var content = cardContent[0];
             cardList.push(content);
+            cardList.push(content);
             var removed = cardContent.splice(0, 1);
         }
         console.log("Content CardList", cardList);
@@ -25,9 +29,11 @@ var Memoryspiel;
         var node = document.getElementById("Spiel");
         var childNodeHTML;
         var i = 0;
+        //Beginn Schleife 
         while (i < (y * 2)) {
             var min = 0;
             var max = (cardList.length);
+            // Random mischen
             var random = Math.floor(Math.random() * (max - min)) + min;
             console.log("Card:" + i);
             console.log(random);

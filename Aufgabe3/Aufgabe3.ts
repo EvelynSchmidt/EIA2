@@ -4,12 +4,11 @@ namespace Memoryspiel {
 
     //Karteneingabe
     function EingabeKarten() : number{
-       
-    let Paare : string = prompt("Mit wie vielen Kartenpaaren möchtest du spielen? (2-26)")
+       // Eingabe vom Nutzer
+    let Paare : string = prompt("Mit wie vielen Kartenpaaren möchtest du spielen? (2-26)") 
+        // "Umwandlung von Eingabe in Variable
     let PaarSumme : number = parseInt(Paare)
-       
-       
-      
+       //Konsolenausgabe
        console.log("EingabeKarten")
         
     
@@ -25,13 +24,14 @@ namespace Memoryspiel {
     
     
     
-    function ArrayMischen(x:number): void {
+    function ArrayMischen (x:number): void {
         
         for (let i: number = 1; i <= x; i++) {
              
             
         var content : string = cardContent[0];  
         cardList.push (content);
+            cardList.push (content);
          
              
             var removed = cardContent.splice(0, 1);
@@ -46,16 +46,17 @@ namespace Memoryspiel {
     
     
    //Karten erzeugen 
-    function generateCards(y:number) : void{
+    function generateCards (y:number) : void{
         var node : any= document.getElementById("Spiel");
         var childNodeHTML : string;
         var i : number = 0;
         
-        
+        //Beginn Schleife 
         while (i < (y*2)) {
             let min: number = 0;
         let max: number = (cardList.length);
-            let random:number=Math.floor(Math.random() * (max - min)) + min; 
+            // Random mischen
+            let random: number = Math.floor(Math.random() * (max - min)) + min; 
             console.log("Card:" + i);
               console.log(random); 
           
