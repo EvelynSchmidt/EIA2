@@ -1,24 +1,22 @@
 namespace Memoryspiel {
-    
-    let numPlayers: number;
-    let numPairs: number;
-    let n: number = 0;
     let cardContent: string [] = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" ];
-let cardList: string[]=[];
-function inputPairs() : number{
+    let cardList: string[]=[];
+
+    //Karteneingabe
+    function EingabeKarten() : number{
        
-    let pairs : string = prompt("Wie viele Kartenpaare (min4 & max26)")
-    let pairSum : number = parseInt(pairs)
+    let Paare : string = prompt("Mit wie vielen Kartenpaaren möchtest du spielen? (2-26)")
+    let PaarSumme : number = parseInt(Paare)
        
        
       
-       console.log("inputPairs")
+       console.log("EingabeKarten")
         
     
-       return pairSum;
+       return PaarSumme;
     }
        
-   let amount :number =  inputPairs();
+   let amount :number =  EingabeKarten();
    
         
     console.log("Länge Infolist", cardContent.length);
@@ -27,14 +25,14 @@ function inputPairs() : number{
     
     
     
-    function shuffelAray(x:number): void {
+    function ArrayMischen(x:number): void {
         
         for (let i: number = 1; i <= x; i++) {
              
             
         var content : string = cardContent[0];  
         cardList.push (content);
-            cardList.push(content);
+         
              
             var removed = cardContent.splice(0, 1);
             
@@ -47,9 +45,9 @@ function inputPairs() : number{
     }
     
     
-    
+   //Karten erzeugen 
     function generateCards(y:number) : void{
-        var node : any= document.getElementById("spielfeld");
+        var node : any= document.getElementById("Spiel");
         var childNodeHTML : string;
         var i : number = 0;
         
@@ -57,9 +55,7 @@ function inputPairs() : number{
         while (i < (y*2)) {
             let min: number = 0;
         let max: number = (cardList.length);
-            // min = Math.ceil(min);
-          //  max = Math.floor(max);
-            var random:number=Math.floor(Math.random() * (max - min)) + min; 
+            let random:number=Math.floor(Math.random() * (max - min)) + min; 
             console.log("Card:" + i);
               console.log(random); 
           
@@ -83,7 +79,7 @@ function inputPairs() : number{
     // Hauptprogramm
     function main () : void {
         
-         shuffelAray(amount);
+         ArrayMischen(amount);
         
        
         
