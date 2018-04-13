@@ -4,7 +4,7 @@ namespace Memoryspiel {
     let numPairs: number;
     let n: number = 0;
     let cardContent: string [] = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" ];
-
+let cardList: string[]=[];
 function inputPairs() : number{
        
     let pairs : string = prompt("Wie viele Kartenpaare (min4 & max26)")
@@ -21,8 +21,8 @@ function inputPairs() : number{
    let amount :number =  inputPairs();
    
         
-    console.log("Länge Infolist", cardcontent.length);
-    console.log("Content Infolist", cardcontent);
+    console.log("Länge Infolist", cardContent.length);
+    console.log("Content Infolist", cardContent);
     
     
     
@@ -32,11 +32,11 @@ function inputPairs() : number{
         for (let i: number = 1; i <= x; i++) {
              
             
-        var content : string = infolist[0];  
+        var content : string = cardContent[0];  
         cardList.push (content);
             cardList.push(content);
              
-            var removed = cardcontent.splice(0, 1);
+            var removed = cardContent.splice(0, 1);
             
             
             
@@ -106,4 +106,3 @@ function inputPairs() : number{
     
 
 
-}
