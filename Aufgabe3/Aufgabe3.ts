@@ -6,9 +6,9 @@ namespace Memoryspiel {
     function EingabeKarten() : number{
        // Eingabe vom Nutzer
     let Paare : string = prompt("Mit wie vielen Kartenpaaren möchtest du spielen? (2-26)") 
-        // "Umwandlung von Eingabe in Variable
+        // Umwandlung von Eingabe in Variable
     let PaarSumme : number = parseInt(Paare)
-       //Konsolenausgabe
+       
        console.log("EingabeKarten")
         
     

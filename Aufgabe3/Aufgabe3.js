@@ -6,9 +6,8 @@ var Memoryspiel;
     function EingabeKarten() {
         // Eingabe vom Nutzer
         var Paare = prompt("Mit wie vielen Kartenpaaren möchtest du spielen? (2-26)");
-        // "Umwandlung von Eingabe in Variable
+        // Umwandlung von Eingabe in Variable
         var PaarSumme = parseInt(Paare);
-        //Konsolenausgabe
         console.log("EingabeKarten");
         return PaarSumme;
     }
