@@ -14,6 +14,14 @@ namespace Memoryspiel {
     
        return PaarSumme;
     }
+    
+    function inputPlayer():number{
+           let n : string = prompt ("Wieviele Spieler wollen mitspielen?(1-4)");
+           let nSum : number = parseInt(n);
+            if (isNaN(nSum) || nSum < 0 || nSum > 4) {
+        alert("FALSCH")
+        inputPlayer();    
+    }
        
    let amount :number =  EingabeKarten();
    
@@ -75,6 +83,23 @@ namespace Memoryspiel {
             i++;
         }
     }
+     function generatePlayers() : void{
+        var node : any= document.getElementById("Spieler");
+        var childNodeHTML : string;
+        var i : number = 0;
+        while (i < players) {
+          
+            childNodeHTML = "<div  class='player' id='Spieler" + i + "'>";
+            childNodeHTML += "Spieler " + (i+1);
+            childNodeHTML += "<p>";
+            childNodeHTML += "0";
+            childNodeHTML += "</p>";
+            childNodeHTML += " </div> ";      
+            node.innerHTML += childNodeHTML;
+            i++;
+        }
+        }
+    
     
     
     // Hauptprogramm
