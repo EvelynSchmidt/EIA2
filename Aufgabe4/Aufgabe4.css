@@ -2,7 +2,7 @@
 	float: left; 
 	height: 5em; 
 	width: 5em; 
-	background-color: #dfdee0; 
+	background-color: white; 
 	margin: 1.5em; 
 	text-align: center; 
 	padding: 2em; 
@@ -12,14 +12,15 @@
 	float: left; 
 	height: 5em; 
 	width: 5em; 
-	background-color: #dfce5c; 
+	background-color: red; 
 	margin: 1.5em; 
 	text-align: center; 
-	padding: 2em; 
+	padding: 2em;
+	 
 }
 
 .cardhidden h3 {
-	color: #dfce5c;
+	color: red;
 }
 
 

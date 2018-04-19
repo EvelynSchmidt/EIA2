@@ -7,14 +7,14 @@ var Memory;
     var numPairsInt;
     var numPlayerInt;
     document.addEventListener('DOMContentLoaded', main);
-    //Hauptfunktion Ablauf
+    //Hauptfunktion Abl    
     function main() {
         player();
         creatCardList(numPairsInt);
         enterName(numPlayerInt);
         creatCards(numPairsInt);
     }
-    //Spieleranzahl eingeben
+    //Spieleranzahl einge    
     function player() {
         var numPlayer = prompt("Gewünschte Anzahl der Spieler   min. 1 | max. 4", "");
         numPlayerInt = parseInt(numPlayer);
@@ -54,7 +54,7 @@ var Memory;
             node.innerHTML += childNodeHTML;
         }
     }
-    //Inhalt der Karten erzeugen
+    //Inhalt der Karten erzeu    
     function creatCardList(x) {
         for (var i = 1; i <= x; i++) {
             var content = cardContent[0];
@@ -63,7 +63,7 @@ var Memory;
             var remove = cardContent.splice(0, 1);
         }
     }
-    //Karten erstellen
+    //Karten erstell   
     function creatCards(_numPairs) {
         var node = document.getElementById("spielfeld");
         var childNodeHTML;
@@ -79,7 +79,14 @@ var Memory;
             childNodeHTML += " </div> ";
             node.innerHTML += childNodeHTML;
             var remove = cardPush.splice(random, 1);
+            var status = document.getElementsByClassName("cardhidden");
+            for (var i_2 = 0; i_2 < status.length; i_2++) {
+                status[i_2].addEventListener("click", cardOpen);
+            }
         }
+    }
+    function cardOpen(status) {
+        console.log("Test");
     }
 })(Memory || (Memory = {}));
 //# sourceMappingURL=Aufgabe4.js.map

@@ -10,8 +10,7 @@ namespace Memory {
 
     document.addEventListener('DOMContentLoaded', main);
 
-//Hauptfunktion Ablauf
-    
+    //Hauptfunktion Abl    
     function main(): void {
 
         player();
@@ -24,8 +23,7 @@ namespace Memory {
     }
 
 
-//Spieleranzahl eingeben
-    
+    //Spieleranzahl einge    
     function player(): number {
         var numPlayer: string = prompt("Gewünschte Anzahl der Spieler   min. 1 | max. 4", "");
         numPlayerInt = parseInt(numPlayer);
@@ -42,7 +40,7 @@ namespace Memory {
 
 
 
-//Kartenpaare eingeben
+    //Kartenpaare eingeben
     function pair(): number {
         var numPairs: string = prompt("Gewünschte Anzahl der Kartenpaare   min. 1 | max. 26");
         numPairsInt = parseInt(numPairs);
@@ -63,14 +61,14 @@ namespace Memory {
 
 
 
-//Spielernamen erzeugen
+    //Spielernamen erzeugen
     function enterName(_numPlayer: number): void {
         let node: any = document.getElementById("spielernamen");
         let childNodeHTML: string;
 
         for (let i: number = 0; i < _numPlayer; i++) {
 
-                     
+
             childNodeHTML = "<div>";
             childNodeHTML += "<h2>";
             childNodeHTML += "<p class='namen'>";
@@ -84,9 +82,8 @@ namespace Memory {
 
 
 
-    
-//Inhalt der Karten erzeugen
-    
+
+    //Inhalt der Karten erzeu    
     function creatCardList(x: number): void {
         for (let i: number = 1; i <= x; i++) {
             var content: string = cardContent[0];
@@ -99,8 +96,7 @@ namespace Memory {
     }
 
 
- //Karten erstellen
-    
+    //Karten erstell   
     function creatCards(_numPairs: number): void {
         let node: any = document.getElementById("spielfeld");
         let childNodeHTML: string;
@@ -123,14 +119,39 @@ namespace Memory {
             node.innerHTML += childNodeHTML;
 
             var remove = cardPush.splice(random, 1)
+            var status = document.getElementsByClassName("cardhidden")
+            for (
+                let i: number = 0; i < status.length; i++) {
+
+
+                status[i].addEventListener("click", cardOpen);
+            }
+
         }
-        
-        
+
+
     }
+    function cardOpen(_numPairs: Event): void {
+        let node: any = document.getElementById("spielfeld");
+        let childNodeHTML: string;
+        let i: number = 0;
+
+
+        for (let i: number = 0; i < _numPairs * 2; i++) {
+            let min: number = 0;
+            let max: number = (cardPush.length);
+
+            var random: number = Math.floor(Math.random() * Math.floor(max));
 
 
 
+            childNodeHTML = "<div  class='card" + "open" + "' id='Karte" + i + "'>";
+            childNodeHTML += "<h3>";
+            childNodeHTML += cardPush[random];
+            childNodeHTML += "</h3>";
+            childNodeHTML += " </div> ";
+            node.innerHTML += childNodeHTML;
 
 
-    
-    }
+    }}
+}
