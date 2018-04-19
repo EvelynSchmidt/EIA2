@@ -119,6 +119,7 @@ namespace Memory {
             node.innerHTML += childNodeHTML;
 
             var remove = cardPush.splice(random, 1)
+
             var status = document.getElementsByClassName("cardhidden")
             for (
                 let i: number = 0; i < status.length; i++) {
@@ -131,27 +132,11 @@ namespace Memory {
 
 
     }
-    function cardOpen(_numPairs: Event): void {
-        let node: any = document.getElementById("spielfeld");
-        let childNodeHTML: string;
-        let i: number = 0;
+    function cardOpen(status: MouseEvent): void {
 
-
-        for (let i: number = 0; i < _numPairs * 2; i++) {
-            let min: number = 0;
-            let max: number = (cardPush.length);
-
-            var random: number = Math.floor(Math.random() * Math.floor(max));
+        console.log("Test");
 
 
 
-            childNodeHTML = "<div  class='card" + "open" + "' id='Karte" + i + "'>";
-            childNodeHTML += "<h3>";
-            childNodeHTML += cardPush[random];
-            childNodeHTML += "</h3>";
-            childNodeHTML += " </div> ";
-            node.innerHTML += childNodeHTML;
-
-
-    }}
+    }
 }
