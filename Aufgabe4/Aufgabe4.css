@@ -2,10 +2,12 @@
 	float: left; 
 	height: 5em; 
 	width: 5em; 
-	background-color: white; 
+	background-color: black; 
 	margin: 1.5em; 
 	text-align: center; 
 	padding: 2em; 
+	color: white;
+	position: relative;
 }
 
 .cardhidden {
@@ -29,10 +31,11 @@
 	float: left; 
 	height: 5em; 
 	width: 5em; 
-	background-color: #fff; 
+	background-color: white; 
 	margin: 1.5em; 
 	text-align: center; 
 	padding: 2em; 
+	color: white;
 }
 
 .cardtaken h3 {

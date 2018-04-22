@@ -4,8 +4,13 @@ namespace Memory {
     let numPairs: number;
     let cardContent: string[] = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
     let cardPush: string[] = [];
+    let cardOpen: string[] = []
     var numPairsInt: number;
     var numPlayerInt: number;
+    let numCardsOpen: number = 0;
+    let openArray: any[] = []
+
+
 
 
     document.addEventListener('DOMContentLoaded', main);
@@ -19,7 +24,7 @@ namespace Memory {
 
         enterName(numPlayerInt);
 
-        creatCards(numPairsInt);
+        createCards(numPairsInt);
     }
 
 
@@ -83,7 +88,7 @@ namespace Memory {
 
 
 
-    //Inhalt der Karten erzeu    
+    //Inhalt der Karten erzeugen    
     function creatCardList(x: number): void {
         for (let i: number = 1; i <= x; i++) {
             var content: string = cardContent[0];
@@ -97,7 +102,7 @@ namespace Memory {
 
 
     //Karten erstell   
-    function creatCards(_numPairs: number): void {
+    function createCards(_numPairs: number): void {
         let node: any = document.getElementById("spielfeld");
         let childNodeHTML: string;
         let i: number = 0;
@@ -121,22 +126,71 @@ namespace Memory {
             var remove = cardPush.splice(random, 1)
 
             var status = document.getElementsByClassName("cardhidden")
-            for (
-                let i: number = 0; i < status.length; i++) {
+            for (let i: number = 0; i < status.length; i++) {
 
 
-                status[i].addEventListener("click", cardOpen);
+                status[i].addEventListener("click", cardStatus);
             }
 
         }
 
 
     }
-    function cardOpen(status: MouseEvent): void {
+    function cardStatus(_event: MouseEvent): void {
+        console.log("Test")
+        let t: HTMLElement = <HTMLElement>_event.currentTarget;
+        if (numCardsOpen >= 0 && numCardsOpen < 2) {
+            if (t.className = "hidden") {
+                if (!(numCardsOpen > 2)) {
+                    if (t.className = "cardhidden") {
+                        t.classList.remove("cardhidden");
+                        t.classList.add("cardopen");
+                        numCardsOpen++;
+                    }
 
-        console.log("Test");
+                }
+                if (numCardsOpen == 2) {
+                    setTimeout(compareCards, 1500);
+                }
+
+                if (numCardsOpen > 2) {
+                    t.classList.remove("cardopen");
+                    t.classList.add("cardhidden");
+                }
+
+                function compareCards(): void {
+                    let karte1: HTMLDivElement = <HTMLDivElement>document.getElementsByClassName("cardopen")[0];
+                    let karte2: HTMLDivElement = <HTMLDivElement>document.getElementsByClassName("cardopen")[1];
+
+                    openArray.push(karte1, karte2);
+                    console.log(openArray);
+                    if (openArray[0].innerHTML == openArray[1].innerHTML) {
+
+                        openArray[0].classList.remove("cardopen");
+                        openArray[0].classList.add("cardtaken");
+
+
+                        openArray[1].classList.remove("cardopen");
+                        openArray[1].classList.add("cardtaken");
+
+                        console.log("Kartenpaar abeglegt");
 
 
 
+                    } else {
+                        openArray[0].classList.remove("cardopen");
+                        openArray[0].classList.add("cardhidden");
+
+
+                        openArray[1].classList.remove("cardopen");
+                        openArray[1].classList.add("cardhidden");
+
+                    }
+
+                    numCardsOpen = 0;
+                    openArray.splice(0, 2);
+                }
+            }
+        }
     }
 }

@@ -4,15 +4,18 @@ var Memory;
     var numPairs;
     var cardContent = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
     var cardPush = [];
+    var cardOpen = [];
     var numPairsInt;
     var numPlayerInt;
+    var numCardsOpen = 0;
+    var openArray = [];
     document.addEventListener('DOMContentLoaded', main);
     //Hauptfunktion Abl    
     function main() {
         player();
         creatCardList(numPairsInt);
         enterName(numPlayerInt);
-        creatCards(numPairsInt);
+        createCards(numPairsInt);
     }
     //Spieleranzahl einge    
     function player() {
@@ -54,7 +57,7 @@ var Memory;
             node.innerHTML += childNodeHTML;
         }
     }
-    //Inhalt der Karten erzeu    
+    //Inhalt der Karten erzeugen    
     function creatCardList(x) {
         for (var i = 1; i <= x; i++) {
             var content = cardContent[0];
@@ -64,7 +67,7 @@ var Memory;
         }
     }
     //Karten erstell   
-    function creatCards(_numPairs) {
+    function createCards(_numPairs) {
         var node = document.getElementById("spielfeld");
         var childNodeHTML;
         var i = 0;
@@ -81,12 +84,52 @@ var Memory;
             var remove = cardPush.splice(random, 1);
             var status = document.getElementsByClassName("cardhidden");
             for (var i_2 = 0; i_2 < status.length; i_2++) {
-                status[i_2].addEventListener("click", cardOpen);
+                status[i_2].addEventListener("click", cardStatus);
             }
         }
     }
-    function cardOpen(status) {
+    function cardStatus(_event) {
         console.log("Test");
+        var t = _event.currentTarget;
+        if (numCardsOpen >= 0 && numCardsOpen < 2) {
+            if (t.className = "hidden") {
+                if (!(numCardsOpen > 2)) {
+                    if (t.className = "cardhidden") {
+                        t.classList.remove("cardhidden");
+                        t.classList.add("cardopen");
+                        numCardsOpen++;
+                    }
+                }
+                if (numCardsOpen == 2) {
+                    setTimeout(compareCards, 1500);
+                }
+                if (numCardsOpen > 2) {
+                    t.classList.remove("cardopen");
+                    t.classList.add("cardhidden");
+                }
+                function compareCards() {
+                    var karte1 = document.getElementsByClassName("cardopen")[0];
+                    var karte2 = document.getElementsByClassName("cardopen")[1];
+                    openArray.push(karte1, karte2);
+                    console.log(openArray);
+                    if (openArray[0].innerHTML == openArray[1].innerHTML) {
+                        openArray[0].classList.remove("cardopen");
+                        openArray[0].classList.add("cardtaken");
+                        openArray[1].classList.remove("cardopen");
+                        openArray[1].classList.add("cardtaken");
+                        console.log("Kartenpaar abeglegt");
+                    }
+                    else {
+                        openArray[0].classList.remove("cardopen");
+                        openArray[0].classList.add("cardhidden");
+                        openArray[1].classList.remove("cardopen");
+                        openArray[1].classList.add("cardhidden");
+                    }
+                    numCardsOpen = 0;
+                    openArray.splice(0, 2);
+                }
+            }
+        }
     }
 })(Memory || (Memory = {}));
 //# sourceMappingURL=Aufgabe4.js.map
