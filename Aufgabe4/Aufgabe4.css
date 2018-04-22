@@ -44,5 +44,8 @@
 
 
 .namen {
+	float: left;
+	font-family: Helvetica;
+	color: red;
 	
 }
