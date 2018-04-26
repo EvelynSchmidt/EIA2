@@ -177,6 +177,7 @@ namespace Memory {
                         openArray[1].classList.remove("cardopen");
                         openArray[1].classList.add("cardtaken");
                     x++;
+                    ende();
 
                         console.log("Kartenpaar abeglegt");
 
