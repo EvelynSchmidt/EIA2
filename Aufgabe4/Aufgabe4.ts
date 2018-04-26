@@ -140,29 +140,7 @@ namespace Memory {
 
 
     }
-    function cardStatus(_event: MouseEvent): void {
-        console.log("Test")
-        let t: HTMLElement = <HTMLElement>_event.currentTarget;
-        if (numCardsOpen >= 0 && numCardsOpen < 2) {
-            if (t.className = "hidden") {
-                if (!(numCardsOpen > 2)) {
-                    if (t.className = "cardhidden") {
-                        t.classList.remove("cardhidden");
-                        t.classList.add("cardopen");
-                        numCardsOpen++;
-                    }
-
-                }
-                if (numCardsOpen == 2) {
-                    setTimeout(compareCards, 1500);
-                }
-
-                if (numCardsOpen > 2) {
-                    t.classList.remove("cardopen");
-                    t.classList.add("cardhidden");
-                }
-
-                function compareCards(): void {
+       function compareCards(): void {
                     let karte1: HTMLDivElement = <HTMLDivElement>document.getElementsByClassName("cardopen")[0];
                     let karte2: HTMLDivElement = <HTMLDivElement>document.getElementsByClassName("cardopen")[1];
 
@@ -196,6 +174,29 @@ namespace Memory {
                     numCardsOpen = 0;
                     openArray.splice(0, 2);
                   
+    function cardStatus(_event: MouseEvent): void {
+        console.log("Test")
+        let t: HTMLElement = <HTMLElement>_event.currentTarget;
+        if (numCardsOpen >= 0 && numCardsOpen < 2) {
+            if (t.className = "hidden") {
+                if (!(numCardsOpen > 2)) {
+                    if (t.className = "cardhidden") {
+                        t.classList.remove("cardhidden");
+                        t.classList.add("cardopen");
+                        numCardsOpen++;
+                    }
+
+                }
+                if (numCardsOpen == 2) {
+                    setTimeout(compareCards, 1500);
+                }
+
+                if (numCardsOpen > 2) {
+                    t.classList.remove("cardopen");
+                    t.classList.add("cardhidden");
+                }
+
+             
   }
    function ende(): void{
     if (x == numPairsInt){
