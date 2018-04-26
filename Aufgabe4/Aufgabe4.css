@@ -39,7 +39,7 @@
 	text-align: center; 
 	padding: 2em; 
 	color: white;
-	
+	visibility: hidden; 
 }
 
 .cardtaken h3 {
@@ -69,3 +69,32 @@
 	height: 100%;
 	overflow: auto;
 }
+
+.cardtaken h3 {
+	color: #fff;
+}
+
+
+.namen {
+	font-family: Helvetica;
+	color: #D0A9F5;
+	padding: 2em;
+	
+}
+#spielernamen {position: fixed;
+	left: 0;
+	top: 0;
+	text-align: center;
+	width: 30%;
+	height: 100%;
+	background-color: #F4F4F4;
+}
+#spielfeld {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 70%;
+	height: 100%;
+	overflow: auto;
+}
+>>>>>>> branch 'master' of https://github.com/EvelynSchmidt/EIA2.git

@@ -9,7 +9,14 @@ namespace Memory {
     var numPlayerInt: number;
     let numCardsOpen: number = 0;
     let openArray: any[] = []
-    let takenCards:any  = [];
+    let takenCards: any = [];
+
+    let x: number = 0;
+
+
+    let amount: number = pair();
+
+
 
 
 
@@ -21,7 +28,7 @@ namespace Memory {
 
         player();
 
-        creatCardList(numPairsInt);
+        createCardList(numPairsInt);
 
         enterName(numPlayerInt);
 
@@ -29,7 +36,7 @@ namespace Memory {
     }
 
 
-        
+
     function player(): number {
         var numPlayer: string = prompt("Wie viele Spieler?   min. 1 | max. 4", "");
         numPlayerInt = parseInt(numPlayer);
@@ -63,9 +70,6 @@ namespace Memory {
     }
 
 
-    let amount: number = pair();
-
-
 
     //Spielernamen erzeugen
     function enterName(_numPlayer: number): void {
@@ -90,7 +94,7 @@ namespace Memory {
 
 
     //Inhalt der Karten erzeugen    
-    function creatCardList(x: number): void {
+    function createCardList(x: number): void {
         for (let i: number = 1; i <= x; i++) {
             var content: string = cardContent[0];
             cardPush.push(content);
@@ -137,6 +141,41 @@ namespace Memory {
 
 
     }
+    function compareCards(): void {
+        let karte1: HTMLDivElement = <HTMLDivElement>document.getElementsByClassName("cardopen")[0];
+        let karte2: HTMLDivElement = <HTMLDivElement>document.getElementsByClassName("cardopen")[1];
+
+        openArray.push(karte1, karte2);
+        console.log(openArray);
+        if (openArray[0].innerHTML == openArray[1].innerHTML) {
+
+            openArray[0].classList.remove("cardopen");
+            openArray[0].classList.add("cardtaken");
+
+
+            openArray[1].classList.remove("cardopen");
+            openArray[1].classList.add("cardtaken");
+            x++;
+            ende();
+
+            console.log("Kartenpaar abeglegt");
+
+
+
+        } else {
+            openArray[0].classList.remove("cardopen");
+            openArray[0].classList.add("cardhidden");
+
+
+            openArray[1].classList.remove("cardopen");
+            openArray[1].classList.add("cardhidden");
+
+        }
+
+        numCardsOpen = 0;
+        openArray.splice(0, 2);
+
+    }
     function cardStatus(_event: MouseEvent): void {
         console.log("Test")
         let t: HTMLElement = <HTMLElement>_event.currentTarget;
@@ -159,49 +198,17 @@ namespace Memory {
                     t.classList.add("cardhidden");
                 }
 
-                function compareCards(): void {
-                    let karte1: HTMLDivElement = <HTMLDivElement>document.getElementsByClassName("cardopen")[0];
-                    let karte2: HTMLDivElement = <HTMLDivElement>document.getElementsByClassName("cardopen")[1];
 
-                    openArray.push(karte1, karte2);
-                    console.log(openArray);
-                    if (openArray[0].innerHTML == openArray[1].innerHTML) {
-
-                        openArray[0].classList.remove("cardopen");
-                        openArray[0].classList.add("cardtaken");
-
-
-                        openArray[1].classList.remove("cardopen");
-                        openArray[1].classList.add("cardtaken");
-
-                        console.log("Kartenpaar abeglegt");
-
-
-
-                    } else {
-                        openArray[0].classList.remove("cardopen");
-                        openArray[0].classList.add("cardhidden");
-
-
-                        openArray[1].classList.remove("cardopen");
-                        openArray[1].classList.add("cardhidden");
-
-                    }
-
-                    numCardsOpen = 0;
-                    openArray.splice(0, 2);
-                   
-                  
-  }
-                
- 
-    }
-    }
-
-
-
-    
-                }
             }
-        
-    
+        }
+    }
+
+    function ende(): void {
+        if (x == numPairsInt) {
+
+            alert("Herzlichen Glückwunsch!");
+
+        }
+
+    }
+}

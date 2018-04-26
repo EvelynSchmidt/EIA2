@@ -10,11 +10,13 @@ var Memory;
     var numCardsOpen = 0;
     var openArray = [];
     var takenCards = [];
+    var x = 0;
+    var amount = pair();
     document.addEventListener('DOMContentLoaded', main);
     //Hauptfunktion    
     function main() {
         player();
-        creatCardList(numPairsInt);
+        createCardList(numPairsInt);
         enterName(numPlayerInt);
         createCards(numPairsInt);
     }
@@ -41,7 +43,6 @@ var Memory;
             pair();
         }
     }
-    var amount = pair();
     //Spielernamen erzeugen
     function enterName(_numPlayer) {
         var node = document.getElementById("spielernamen");
@@ -58,7 +59,7 @@ var Memory;
         }
     }
     //Inhalt der Karten erzeugen    
-    function creatCardList(x) {
+    function createCardList(x) {
         for (var i = 1; i <= x; i++) {
             var content = cardContent[0];
             cardPush.push(content);
@@ -88,6 +89,29 @@ var Memory;
             }
         }
     }
+    function compareCards() {
+        var karte1 = document.getElementsByClassName("cardopen")[0];
+        var karte2 = document.getElementsByClassName("cardopen")[1];
+        openArray.push(karte1, karte2);
+        console.log(openArray);
+        if (openArray[0].innerHTML == openArray[1].innerHTML) {
+            openArray[0].classList.remove("cardopen");
+            openArray[0].classList.add("cardtaken");
+            openArray[1].classList.remove("cardopen");
+            openArray[1].classList.add("cardtaken");
+            x++;
+            ende();
+            console.log("Kartenpaar abeglegt");
+        }
+        else {
+            openArray[0].classList.remove("cardopen");
+            openArray[0].classList.add("cardhidden");
+            openArray[1].classList.remove("cardopen");
+            openArray[1].classList.add("cardhidden");
+        }
+        numCardsOpen = 0;
+        openArray.splice(0, 2);
+    }
     function cardStatus(_event) {
         console.log("Test");
         var t = _event.currentTarget;
@@ -107,28 +131,12 @@ var Memory;
                     t.classList.remove("cardopen");
                     t.classList.add("cardhidden");
                 }
-                function compareCards() {
-                    var karte1 = document.getElementsByClassName("cardopen")[0];
-                    var karte2 = document.getElementsByClassName("cardopen")[1];
-                    openArray.push(karte1, karte2);
-                    console.log(openArray);
-                    if (openArray[0].innerHTML == openArray[1].innerHTML) {
-                        openArray[0].classList.remove("cardopen");
-                        openArray[0].classList.add("cardtaken");
-                        openArray[1].classList.remove("cardopen");
-                        openArray[1].classList.add("cardtaken");
-                        console.log("Kartenpaar abeglegt");
-                    }
-                    else {
-                        openArray[0].classList.remove("cardopen");
-                        openArray[0].classList.add("cardhidden");
-                        openArray[1].classList.remove("cardopen");
-                        openArray[1].classList.add("cardhidden");
-                    }
-                    numCardsOpen = 0;
-                    openArray.splice(0, 2);
-                }
             }
+        }
+    }
+    function ende() {
+        if (x == numPairsInt) {
+            alert("Herzlichen Glückwunsch!");
         }
     }
 })(Memory || (Memory = {}));
