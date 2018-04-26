@@ -9,13 +9,14 @@ namespace Memory {
     var numPlayerInt: number;
     let numCardsOpen: number = 0;
     let openArray: any[] = []
+    let takenCards:any  = [];
 
 
 
 
     document.addEventListener('DOMContentLoaded', main);
 
-    //Hauptfunktion Abl    
+    //Hauptfunktion    
     function main(): void {
 
         player();
@@ -28,9 +29,9 @@ namespace Memory {
     }
 
 
-    //Spieleranzahl einge    
+        
     function player(): number {
-        var numPlayer: string = prompt("Gewünschte Anzahl der Spieler   min. 1 | max. 4", "");
+        var numPlayer: string = prompt("Wie viele Spieler?   min. 1 | max. 4", "");
         numPlayerInt = parseInt(numPlayer);
 
         if (numPlayerInt >= 1 && numPlayerInt <= 4) {
@@ -47,7 +48,7 @@ namespace Memory {
 
     //Kartenpaare eingeben
     function pair(): number {
-        var numPairs: string = prompt("Gewünschte Anzahl der Kartenpaare   min. 1 | max. 26");
+        var numPairs: string = prompt("Wieviele Kaartenparre?   min. 1 | max. 26");
         numPairsInt = parseInt(numPairs);
 
         if (numPairsInt >= 1 && numPairsInt <= 26) {
@@ -189,8 +190,18 @@ namespace Memory {
 
                     numCardsOpen = 0;
                     openArray.splice(0, 2);
+                   
+                  
+  }
+                
+ 
+    }
+    }
+
+
+
+    
                 }
             }
-        }
-    }
-}
+        
+    

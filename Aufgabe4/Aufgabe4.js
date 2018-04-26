@@ -9,17 +9,17 @@ var Memory;
     var numPlayerInt;
     var numCardsOpen = 0;
     var openArray = [];
+    var takenCards = [];
     document.addEventListener('DOMContentLoaded', main);
-    //Hauptfunktion Abl    
+    //Hauptfunktion    
     function main() {
         player();
         creatCardList(numPairsInt);
         enterName(numPlayerInt);
         createCards(numPairsInt);
     }
-    //Spieleranzahl einge    
     function player() {
-        var numPlayer = prompt("Gewünschte Anzahl der Spieler   min. 1 | max. 4", "");
+        var numPlayer = prompt("Wie viele Spieler?   min. 1 | max. 4", "");
         numPlayerInt = parseInt(numPlayer);
         if (numPlayerInt >= 1 && numPlayerInt <= 4) {
             return numPlayerInt;
@@ -31,7 +31,7 @@ var Memory;
     }
     //Kartenpaare eingeben
     function pair() {
-        var numPairs = prompt("Gewünschte Anzahl der Kartenpaare   min. 1 | max. 26");
+        var numPairs = prompt("Wieviele Kaartenparre?   min. 1 | max. 26");
         numPairsInt = parseInt(numPairs);
         if (numPairsInt >= 1 && numPairsInt <= 26) {
             return numPairsInt;
