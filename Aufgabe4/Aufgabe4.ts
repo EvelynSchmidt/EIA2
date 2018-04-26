@@ -10,6 +10,9 @@ namespace Memory {
     let numCardsOpen: number = 0;
     let openArray: any[] = []
     let takenCards:any  = [];
+     let x: number = 0;
+
+
 
 
 
@@ -173,6 +176,7 @@ namespace Memory {
 
                         openArray[1].classList.remove("cardopen");
                         openArray[1].classList.add("cardtaken");
+                    x++;
 
                         console.log("Kartenpaar abeglegt");
 
@@ -192,6 +196,12 @@ namespace Memory {
                     openArray.splice(0, 2);
                   
   }
+   function ende(): void{
+    if (x == numPairsInt){
+
+        alert("Herzlichen Glückwunsch!");
+        
+    }
     
                 }
             }
