@@ -83,9 +83,9 @@ var Memory;
             childNodeHTML += " </div> ";
             node.innerHTML += childNodeHTML;
             var remove = cardPush.splice(random, 1);
-            var status = document.getElementsByClassName("cardhidden");
-            for (var i_2 = 0; i_2 < status.length; i_2++) {
-                status[i_2].addEventListener("click", cardStatus);
+            var hiddenCards = document.getElementsByClassName("cardhidden");
+            for (var i_2 = 0; i_2 < hiddenCards.length; i_2++) {
+                hiddenCards[i_2].addEventListener("click", cardStatus);
             }
         }
     }
@@ -116,7 +116,7 @@ var Memory;
         console.log("Test");
         var t = _event.currentTarget;
         if (numCardsOpen >= 0 && numCardsOpen < 2) {
-            if (t.className = "hidden") {
+            if (t.className == "hidden") {
                 if (!(numCardsOpen > 2)) {
                     if (t.className = "cardhidden") {
                         t.classList.remove("cardhidden");

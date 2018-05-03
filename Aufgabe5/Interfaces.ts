@@ -6,7 +6,7 @@ namespace L04_Interfaces {
         matrikel: number;
         age: number;
         gender: boolean;
-        major: string;
+       studiengang: string;                    
     }
 
     // Struktur des Arrays, bei dem ein Datensatz der Matrikelnummer zugeordnet ist
@@ -20,3 +20,4 @@ namespace L04_Interfaces {
     // Array zur Speicherung einer Person unter der Matrikelnummer
     export let studiHomoAssoc: Studis = {};
     }
+

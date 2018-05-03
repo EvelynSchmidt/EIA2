@@ -5,31 +5,31 @@ namespace L04_Interfaces {
         console.log("Init");
         let insertButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("insert");
         let refreshButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("refresh");
-        let searchButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("search");
+        let searchButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("searchbutton");
         insertButton.addEventListener("click", insert);
         refreshButton.addEventListener("click", refresh);
-        searchButton.addEventListener("click", search);
+        searchButton.addEventListener("click", refresh2);
     }
 
     function insert(_event: Event): void {
         let inputs: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input");
         let genderButton: HTMLInputElement = <HTMLInputElement>document.getElementById("male");
+        let select: HTMLSelectElement = <HTMLSelectElement>document.getElementById("select");
         let matrikel: string = inputs[2].value;
         let studi: Studi;
-        console.log(inputs);
         studi = {
             name: inputs[0].value,
             firstname: inputs[1].value,
             matrikel: parseInt(matrikel),
+            studiengang: select.value,
             age: parseInt(inputs[3].value),
-            gender: genderButton.checked,
-            major: inputs[4].value
+            gender: genderButton.checked
         };
 
         console.log(studi);
         console.log(studi.age);
         console.log(studi["age"]);
-
+        console.log(studi.studiengang);
         // Datensatz im assoziativen Array unter der Matrikelnummer speichern
         studiHomoAssoc[matrikel] = studi;
 
@@ -44,34 +44,34 @@ namespace L04_Interfaces {
         for (let matrikel in studiHomoAssoc) {  // Besonderheit: Type-Annotation nicht erlaubt, ergibt sich aus der Interface-Definition
             let studi: Studi = studiHomoAssoc[matrikel];
             let line: string = matrikel + ": ";
-            line += studi.name + ", " + studi.firstname + ", " + studi.age + " Jahre ";
-            line += studi.major + ",";
-            line += studi.gender ? "(M)" : "(F)";
+            line += studi.name + ", " + studi.firstname + ", " + studi.age + " Jahre " + ", " + studi.studiengang;
+            line += studi.gender ? ", (M)" : ", (F)";
             output.value += line + "\n";
         }
-
-        // zusätzliche Konsolenausgaben zur Demonstration
+    }
+    
+    function refresh2(_event: Event): void {
+        let output: HTMLTextAreaElement = document.getElementsByTagName("textarea")[1];
+        output.value = "";
+        let inputs: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input");
+        let matrikel: string = inputs[6].value;
+        console.log(matrikel);
+        let studi: Studi = studiHomoAssoc[matrikel];
+        console.log(studi);
+        if (typeof studi === "undefined") {
+            output.value = "No student found.";
+        } else {
+            let line: string = matrikel + ": ";
+            line += studi.name + ", " + studi.firstname + ", " + studi.age + " Jahre " + ", " + studi.studiengang;
+            line += studi.gender ? ", (M)" : ", (F)";
+            output.value += line + "\n";
+        }
         console.group("Simple Array");
         console.log(studiSimpleArray);
         console.groupEnd();
-
         console.group("Associatives Array (Object)");
         console.log(studiHomoAssoc);
         console.groupEnd();
     }
-
-    function search(_event: Event): void {
-        document.getElementById("searchresult").innerHTML = "";
-        var matrikel: number = parseInt((<HTMLInputElement>document.getElementById("matrikelsearch")).value);
-        if (studiHomoAssoc[matrikel] == undefined) {
-            document.getElementById("searchresult").innerHTML = "Not found!";
-        } else {
-            let studi: Studi = studiHomoAssoc[matrikel];
-            let line: string = matrikel + ": ";
-            line += studi.name + ", " + studi.firstname + ", " + studi.age + " Jahre ";
-            line += studi.major + ",";
-            line += studi.gender ? "(M)" : "(F)";
-            document.getElementById("searchresult").innerHTML += line + "\n";
-        }
-    }
 }
+//Ende namespace

@@ -130,11 +130,11 @@ namespace Memory {
 
             var remove = cardPush.splice(random, 1)
 
-            var status = document.getElementsByClassName("cardhidden")
-            for (let i: number = 0; i < status.length; i++) {
+            var hiddenCards = document.getElementsByClassName("cardhidden")
+            for (let i: number = 0; i < hiddenCards.length; i++) {
 
 
-                status[i].addEventListener("click", cardStatus);
+                hiddenCards[i].addEventListener("click", cardStatus);
             }
 
         }
@@ -180,7 +180,7 @@ namespace Memory {
         console.log("Test")
         let t: HTMLElement = <HTMLElement>_event.currentTarget;
         if (numCardsOpen >= 0 && numCardsOpen < 2) {
-            if (t.className = "hidden") {
+            if (t.className == "hidden") {
                 if (!(numCardsOpen > 2)) {
                     if (t.className = "cardhidden") {
                         t.classList.remove("cardhidden");
