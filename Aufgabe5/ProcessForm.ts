@@ -74,4 +74,3 @@ namespace L04_Interfaces {
         console.groupEnd();
     }
 }
-//Ende namespace
