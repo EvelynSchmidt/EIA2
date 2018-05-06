@@ -1,0 +1,90 @@
+.disappearedHeader {
+	display:none;
+}
+
+.cardopen {
+	float: left; 
+	height: 5em; 
+	width: 5em; 
+	background-color: white; 
+	margin: 1.5em; 
+	text-align: center; 
+	padding: 2em; 
+	color: #D0A9F5;
+	position: relative;
+	font-family: Helvetica;
+}
+
+.cardhidden {
+	float: left; 
+	height: 5em; 
+	width: 5em; 
+	background-color: #D0A9F5; 
+	margin: 1.5em; 
+	text-align: center; 
+	padding: 2em;
+	
+	 
+}
+
+.cardhidden h3 {
+	color: #D0A9F5;
+	font-family: Helvetica;
+}
+
+
+
+.cardtaken {
+	float: left; 
+	height: 5em; 
+	width: 5em; 
+	background-color: white; 
+	margin: 1.5em; 
+	text-align: center; 
+	padding: 2em; 
+	color: white;
+	
+}
+
+.cardtaken h3 {
+	color: #fff;
+}
+
+
+.namen {
+	font-family: Helvetica;
+	color: #D0A9F5;
+	padding: 2em;
+	
+}
+
+footer {
+	position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+	height: 20%;
+	color: white;
+background-color: grey;
+
+
+}
+
+footer p {
+	float: left;
+	text-align: center;
+}
+
+
+#Namen {
+}
+#spielfeld {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 70%;
+	height: 100%;
+	overflow: auto;
+}
+
+

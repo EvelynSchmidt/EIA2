@@ -1,0 +1,71 @@
+<!--
+Aufgabe 03
+Name: Evelyn Schmidt
+Matrikel: 267575
+Datum: 22.April.2018
+
+Hiermit versichere ich, dass ich diesen
+Code selbst geschrieben habe. Er wurde
+nicht kopiert und auch nicht diktiert. 
+-->
+
+<!doctype html>
+<html>
+
+<head>
+
+<title>Memoryspiel</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="Aufgabe5.css">
+<script type="text/javascript" src="Aufgabe5.js"></script>
+<script type="text/javascript" src="InterfacesMemory.js"></script>
+</head>
+
+
+<header>
+<fieldset id="anzahlSpieler">
+		<legend>Spieleranzahl?</legend>
+			<input id="players" type="number" name="Spieler"
+			placeholder="1 - 4 Spieler" min="1" max="4" />
+		</fieldset>	
+		<fieldset id="spielername">
+			<legend>Hier Spielernamen eingeben</legend>
+			<input type="text" name="name" placeholder="Spieler 1"/>
+			<input type="text" name="name" placeholder="Spieler 2"/>
+			<input type="text" name="name" placeholder="Spieler 3"/>
+			<input type="text" name="name" placeholder="Spieler 4"/>
+		</fieldset>
+		
+		<fieldset id="Kartendecks">
+			<legend>Mit was für einem Kartendeck möchten sie spielen</legend>
+			<select name="Select" id="cardContent">
+				<option value="Fruits"selected>Fruits</option>
+				<option value="Citys">Citys</option>
+				<option value="Planets">Planets</option>
+			</select>
+		</fieldset>
+			
+			
+		<fieldset id="anzahlKartenpaare">
+			<legend>Wie viele Kartenpaare sollen ausgelegt werden</legend>
+			<input type="number" name="Kartenpaare" placeholder="1 - 10 Kartenpaare" min="1" max="10" />
+		</fieldset>	
+		
+		<fieldset id="startGame">
+			<button type="button" id="startButton">Start</button>
+		</fieldset>
+
+</header>
+
+	<section id="Namen"></section>
+
+</header>
+
+
+<body>
+
+	<section id="spielfeld"></section>
+
+</body>
+
+</html>
