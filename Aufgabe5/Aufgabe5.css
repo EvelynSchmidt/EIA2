@@ -4,13 +4,13 @@
 
 
 h1 {
-		font-family: 'Acme', sans-serif;
+		font-family: 'Helvetica';
 	text-align: center;
 	font-size: 4em;
 	padding-top: 1%;
 }
 header {
-	font-family: 'Acme', sans-serif;
+	font-family: 'Helvetica';
 	text-align: center;
 	padding: 5%;
 	font-size: 1.5em;
@@ -23,18 +23,18 @@ header {
 	float: left; 
 	height: 5em; 
 	width: 5em; 
-	background-color: #dfdee0; 
+	background-color: red; 
 	margin: 1.5em; 
 	text-align: center; 
 	padding: 2em; 
-	font-family: 'Acme', sans-serif;
+	font-family: 'Helvetica';
 }
 
 .cardhidden {
 		float: left; 
 	height: 5em; 
 	width: 5em; 
-	background-color: #dfce5c; 
+	background-color: red; 
 	margin: 1.5em; 
 	text-align: center; 
 	padding: 2em;
@@ -42,7 +42,7 @@ header {
 }
 
 .cardhidden h3 {
-	color: #dfce5c;
+	color: red;
 }
 
 
@@ -66,13 +66,13 @@ header {
 
 
 .namen {
-	font-family: 'Acme', sans-serif;
+	font-family: 'Helvetica';
 	color: #428a00;
 	padding: 2em;
 	
 }
 
-#Punktestand {	font-family: 'Acme', sans-serif;
+#Punktestand {	font-family: 'Helvetica';
 	color: #428a00;
 	padding: 2em;
 	
@@ -82,7 +82,7 @@ header {
 
 
 #startButton {
-		font-family: 'Acme', sans-serif;
+		font-family: 'Helvetica';
 		font-size: 1.5em;
 
 	
