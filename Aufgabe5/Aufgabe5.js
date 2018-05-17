@@ -23,7 +23,9 @@ var Memory5;
         header[0].classList.add("disappearedHeader");
         var players = parseInt(inputs[0].value);
         var amountCards = parseInt(inputs[5].value);
-        if (players <= 4 && players > 0 && amountCards > 0 && amountCards <= 10) {
+        var select = document.getElementById("select");
+        var selectedArray = select.value;
+        if (players <= 4 && players > 0 && amountCards > 0 && amountCards <= Memory5.decks[selectedArray].content.length) {
             createCardList();
             spielererzeugen();
             createCards();

@@ -1,35 +1,48 @@
-.disappearedHeader {
+..hiddenHeader {
 	display:none;
 }
+
+
+h1 {
+		font-family: 'Acme', sans-serif;
+	text-align: center;
+	font-size: 4em;
+	padding-top: 1%;
+}
+header {
+	font-family: 'Acme', sans-serif;
+	text-align: center;
+	padding: 5%;
+	font-size: 1.5em;
+	color: #3e641b;
+	
+}
+
 
 .cardopen {
 	float: left; 
 	height: 5em; 
 	width: 5em; 
-	background-color: white; 
+	background-color: #dfdee0; 
 	margin: 1.5em; 
 	text-align: center; 
 	padding: 2em; 
-	color: #D0A9F5;
-	position: relative;
-	font-family: Helvetica;
+	font-family: 'Acme', sans-serif;
 }
 
 .cardhidden {
-	float: left; 
+		float: left; 
 	height: 5em; 
 	width: 5em; 
-	background-color: #D0A9F5; 
+	background-color: #dfce5c; 
 	margin: 1.5em; 
 	text-align: center; 
 	padding: 2em;
-	
 	 
 }
 
 .cardhidden h3 {
-	color: #D0A9F5;
-	font-family: Helvetica;
+	color: #dfce5c;
 }
 
 
@@ -38,11 +51,12 @@
 	float: left; 
 	height: 5em; 
 	width: 5em; 
-	background-color: white; 
+	background-color: #fff; 
 	margin: 1.5em; 
 	text-align: center; 
 	padding: 2em; 
-	color: white;
+	color: #fff;
+	visibility:hidden;
 	
 }
 
@@ -52,9 +66,25 @@
 
 
 .namen {
-	font-family: Helvetica;
-	color: #D0A9F5;
+	font-family: 'Acme', sans-serif;
+	color: #428a00;
 	padding: 2em;
+	
+}
+
+#Punktestand {	font-family: 'Acme', sans-serif;
+	color: #428a00;
+	padding: 2em;
+	
+	
+}
+
+
+
+#startButton {
+		font-family: 'Acme', sans-serif;
+		font-size: 1.5em;
+
 	
 }
 
@@ -63,9 +93,9 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-	height: 20%;
-	color: white;
-background-color: grey;
+	color: black;
+	background-color: #fff;
+	text-align: center;
 
 
 }
@@ -73,18 +103,6 @@ background-color: grey;
 footer p {
 	float: left;
 	text-align: center;
+	font-size: 1.5em; 
+	
 }
-
-
-#Namen {
-}
-#spielfeld {
-	position: fixed;
-	top: 0;
-	right: 0;
-	width: 70%;
-	height: 100%;
-	overflow: auto;
-}
-
-
