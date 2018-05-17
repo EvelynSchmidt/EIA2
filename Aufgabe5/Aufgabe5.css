@@ -1,48 +1,34 @@
 ..hiddenHeader {
 	display:none;
 }
-
-
-h1 {
-		font-family: 'Helvetica';
-	text-align: center;
-	font-size: 4em;
-	padding-top: 1%;
-}
-header {
-	font-family: 'Helvetica';
-	text-align: center;
-	padding: 5%;
-	font-size: 1.5em;
-	color: #3e641b;
-	
-}
-
-
-.cardopen {
+cardopen {
 	float: left; 
 	height: 5em; 
 	width: 5em; 
-	background-color: red; 
+	background-color: white; 
 	margin: 1.5em; 
 	text-align: center; 
 	padding: 2em; 
-	font-family: 'Helvetica';
+	color: #D0A9F5;
+	position: relative;
+	font-family: Helvetica;
 }
 
 .cardhidden {
-		float: left; 
+	float: left; 
 	height: 5em; 
 	width: 5em; 
-	background-color: red; 
+	background-color: #D0A9F5; 
 	margin: 1.5em; 
 	text-align: center; 
 	padding: 2em;
+	
 	 
 }
 
 .cardhidden h3 {
-	color: red;
+	color: #D0A9F5;
+	font-family: Helvetica;
 }
 
 
@@ -51,13 +37,12 @@ header {
 	float: left; 
 	height: 5em; 
 	width: 5em; 
-	background-color: #fff; 
+	background-color: white; 
 	margin: 1.5em; 
 	text-align: center; 
 	padding: 2em; 
-	color: #fff;
-	visibility:hidden;
-	
+	color: white;
+	visibility: hidden; 
 }
 
 .cardtaken h3 {
@@ -66,43 +51,52 @@ header {
 
 
 .namen {
-	font-family: 'Helvetica';
-	color: #428a00;
+	font-family: Helvetica;
+	color: #D0A9F5;
 	padding: 2em;
 	
 }
-
-#Punktestand {	font-family: 'Helvetica';
-	color: #428a00;
-	padding: 2em;
-	
-	
+#spielernamen {position: fixed;
+	left: 0;
+	top: 0;
+	text-align: center;
+	width: 30%;
+	height: 100%;
+	background-color: #F4F4F4;
 }
-
-
-
-#startButton {
-		font-family: 'Helvetica';
-		font-size: 1.5em;
-
-	
-}
-
-footer {
+#spielfeld {
 	position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-	color: black;
-	background-color: #fff;
-	text-align: center;
-
-
+	top: 0;
+	right: 0;
+	width: 70%;
+	height: 100%;
+	overflow: auto;
 }
 
-footer p {
-	float: left;
-	text-align: center;
-	font-size: 1.5em; 
+.cardtaken h3 {
+	color: #fff;
+}
+
+
+.namen {
+	font-family: Helvetica;
+	color: #D0A9F5;
+	padding: 2em;
 	
 }
+#spielernamen {position: fixed;
+	left: 0;
+	top: 0;
+	text-align: center;
+	width: 30%;
+	height: 100%;
+	background-color: #F4F4F4;
+}
+#spielfeld {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 70%;
+	height: 100%;
+	overflow: auto;
+}}
