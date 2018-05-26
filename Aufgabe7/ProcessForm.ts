@@ -1,8 +1,7 @@
 
 /*
-Aufgabe: 6 : ClientServer - StudiVZ
-Name: Daniel Kern   
-Matrikel: 257171
+Aufgabe: 6 
+Name: evelyn schmidt  
 Datum: 26.05.18
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
