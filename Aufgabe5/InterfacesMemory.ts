@@ -10,7 +10,7 @@ namespace Memory04 {
         [deckname: string]: Deck;
     }
 
-    export let decks: Decks = {}
+    export let decks3: Decks = {}
 
     export interface Decks {
         [deckname: string]: Deck;
