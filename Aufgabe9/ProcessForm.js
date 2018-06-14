@@ -1,7 +1,7 @@
 var aufgabe8;
 (function (aufgabe8) {
     window.addEventListener("load", init);
-    var address = "https://muelle2k.herokuapp.com";
+    var address = "https://projekteia2.herokuapp.com";
     var inputs = document.getElementsByTagName("input");
     function init(_event) {
         console.log("Init");
