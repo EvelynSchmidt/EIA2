@@ -1,7 +1,7 @@
-var Aufgabe8;
-(function (Aufgabe8) {
+var aufgabe8;
+(function (aufgabe8) {
     window.addEventListener("load", init);
-    var address = "https://projekteia2.herokuapp.com";
+    var address = "https://muelle2k.herokuapp.com";
     var inputs = document.getElementsByTagName("input");
     function init(_event) {
         console.log("Init");
@@ -66,5 +66,5 @@ var Aufgabe8;
             output.value += xhr.response;
         }
     }
-})(Aufgabe8 || (Aufgabe8 = {}));
+})(aufgabe8 || (aufgabe8 = {}));
 //# sourceMappingURL=ProcessForm.js.map
