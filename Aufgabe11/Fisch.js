@@ -5,13 +5,13 @@ var L10_Animation;
         }
         // declare method without keyword function
         Fisch.prototype.move = function () {
-            this.x += 20;
-            this.y += Math.random();
+            this.x += 3;
+            this.y += 0;
         };
         //Funktion lila Fische
         Fisch.prototype.drawFish1 = function () {
             L10_Animation.ctx.beginPath();
-            L10_Animation.crc2.fillStyle = "rgb(106,90,205)";
+            L10_Animation.crc2.fillStyle = "rgb(" + this.r + "," + this.g + "," + this.b + ")";
             L10_Animation.ctx.moveTo(this.x, this.y);
             L10_Animation.ctx.bezierCurveTo(this.x + 30, this.y, this.x + 30, this.y + 20, this.x, this.y + 20);
             L10_Animation.crc2.moveTo(this.x, this.y + 20);

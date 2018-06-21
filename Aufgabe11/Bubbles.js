@@ -5,20 +5,15 @@ var L10_Animation;
         }
         // declare method without keyword function
         Blase.prototype.move = function () {
-            this.x += Math.random() * 4 - 2;
-            this.y += Math.random() * 4 - 2;
+            this.x += 0;
+            this.y += 1;
         };
-        Blase.prototype.draw = function () {
-            L10_Animation.crc2.beginPath();
-            L10_Animation.crc2.moveTo(this.x, this.y - 20);
-            L10_Animation.crc2.lineTo(this.x + 20, this.y + 10);
-            L10_Animation.crc2.lineTo(this.x - 20, this.y + 10);
+        Blase.prototype.drawBubbles = function () {
+            L10_Animation.ctx.beginPath();
+            L10_Animation.crc2.fillStyle = "rgb(0,0,255)";
+            L10_Animation.ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
             L10_Animation.crc2.closePath();
-            L10_Animation.crc2.moveTo(this.x, this.y + 20);
-            L10_Animation.crc2.lineTo(this.x + 20, this.y - 10);
-            L10_Animation.crc2.lineTo(this.x - 20, this.y - 10);
-            L10_Animation.crc2.closePath();
-            L10_Animation.crc2.stroke();
+            L10_Animation.ctx.stroke();
             L10_Animation.crc2.fill();
         };
         return Blase;

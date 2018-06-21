@@ -2,11 +2,12 @@ namespace L10_Animation {
     export class Blase {
         x: number;
         y: number;
+        radius: number;
 
         // declare method without keyword function
         move(): void {
-            this.x += Math.random() * 4 - 2;
-            this.y += Math.random() * 4 - 2;
+            this.x += 0
+            this.y += 1
         }
 
         
