@@ -40,7 +40,7 @@ var L10_Animation;
         animate();
     }
     function animate() {
-        window.setTimeout(animate, 10);
+        window.setTimeout(animate, 120);
         //console.log(animate);
         L10_Animation.crc2.putImageData(imgData, 0, 0);
         //crc2.clearRect( 0, 0, crc2.canvas.width, crc2.canvas.height );

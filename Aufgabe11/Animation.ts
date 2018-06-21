@@ -53,7 +53,7 @@ namespace L10_Animation {
     }
 
     function animate(): void {
-        window.setTimeout( animate, 10 );
+        window.setTimeout( animate, 120 );
 
         //console.log(animate);
 
