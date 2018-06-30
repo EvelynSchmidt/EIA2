@@ -1,3 +1,12 @@
+/*
+
+Name:       Evelyn Schmidt
+Matrikel:   257676
+Datum:      17.06.2018
+    
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+
+Code funktioniert nicht, habe 4 Stunden nach dem Fehler gesucht, auch Konsolenausgabe hilft nicht*/
 var aquaworld;
 (function (aquaworld) {
     window.addEventListener("load", init);
