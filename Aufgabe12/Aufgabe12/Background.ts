@@ -1,4 +1,4 @@
-namespace L10_Animation {
+namespace aqua {
 
 
     export class Hintergrund {
@@ -37,7 +37,7 @@ namespace L10_Animation {
         crc2.lineTo( _x + 10, _y - 35 );
         crc2.lineTo( _x + 10, _y + 85 );
         crc2.closePath();
-        ctx.stroke();
+        crc2.stroke();
         crc2.fill();
     }
         //Seestern

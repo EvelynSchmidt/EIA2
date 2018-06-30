@@ -1,23 +1,30 @@
-namespace L10_Animation {
-    export class Blase {
-        x: number;
-        y: number;
-        radius: number;
+namespace aqua {
+export class Bubble extends MovingObjects {
+        r: number;
 
-        // declare method without keyword function
-        move(): void {
-            this.x += 0
-            this.y += 1
+        constructor(_x: number, _y: number, _color: string) {
+            super(_x, _y, _color);
+
         }
 
-        
-        drawBubbles (): void {
-        ctx.beginPath();
-        crc2.fillStyle = "rgb(0,0,255)";
-        ctx.arc( this.x, this.y, this.radius, 0, 2 * Math.PI );
-        crc2.closePath();
-        ctx.stroke();
-        crc2.fill();
+        move(): void {
+            this.y += -15;
+
+            if (this.y < 0) {
+                this.y = 1200;
+            }
+        }
+
+
+        draw(): void {
+            crc2.beginPath();
+            crc2.arc(this.x, this.y, this.r, 0, 20 * Math.PI);
+            crc2.fillStyle = this.color;
+            crc2.closePath();
+            crc2.stroke();
+            crc2.fill();
+        }
     }
-    }
+
+
 }

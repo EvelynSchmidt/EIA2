@@ -1,4 +1,4 @@
-namespace aqua {
+namespace aquaworld {
     
     window.addEventListener( "load", init );
     export let crc2: CanvasRenderingContext2D;

@@ -1,49 +1,38 @@
-var L10_Animation;
-(function (L10_Animation) {
-    var Fisch = (function () {
-        function Fisch() {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var aqua;
+(function (aqua) {
+    var Fisch = (function (_super) {
+        __extends(Fisch, _super);
+        function Fisch(_x, _y, _color) {
+            _super.call(this, _x, _y, _color);
         }
-        // declare method without keyword function
         Fisch.prototype.move = function () {
             this.x += 3;
             this.y += 0;
         };
         //Funktion lila Fische
-        Fisch.prototype.drawFish1 = function () {
-            L10_Animation.ctx.beginPath();
-            L10_Animation.crc2.fillStyle = "rgb(" + this.r + "," + this.g + "," + this.b + ")";
-            L10_Animation.ctx.moveTo(this.x, this.y);
-            L10_Animation.ctx.bezierCurveTo(this.x + 30, this.y, this.x + 30, this.y + 20, this.x, this.y + 20);
-            L10_Animation.crc2.moveTo(this.x, this.y + 20);
-            L10_Animation.crc2.lineTo(this.x - 20, this.y + 10);
-            L10_Animation.crc2.lineTo(this.x - 25, this.y + 15);
-            L10_Animation.crc2.lineTo(this.x - 25, this.y);
-            L10_Animation.crc2.lineTo(this.x - 20, this.y + 5);
-            L10_Animation.crc2.lineTo(this.x, this.y);
-            L10_Animation.crc2.closePath();
-            L10_Animation.ctx.stroke();
-            L10_Animation.ctx.fill();
-            L10_Animation.crc2.closePath();
-        };
-        //Funktion grün Fisch  
-        Fisch.prototype.drawFish2 = function () {
-            L10_Animation.ctx.beginPath();
-            L10_Animation.crc2.fillStyle = "rgb(84,255,159)";
-            L10_Animation.ctx.moveTo(this.x, this.y);
-            L10_Animation.ctx.bezierCurveTo(this.x + 30, this.y, this.x + 30, this.y + 20, this.x, this.y + 20);
-            L10_Animation.crc2.moveTo(this.x, this.y + 20);
-            L10_Animation.crc2.lineTo(this.x - 20, this.y + 10);
-            L10_Animation.crc2.lineTo(this.x - 25, this.y + 15);
-            L10_Animation.crc2.lineTo(this.x - 25, this.y + 0);
-            L10_Animation.crc2.lineTo(this.x - 20, this.y + 5);
-            L10_Animation.crc2.lineTo(this.x, this.y);
-            L10_Animation.crc2.closePath();
-            L10_Animation.ctx.stroke();
-            L10_Animation.ctx.fill();
-            L10_Animation.crc2.closePath();
+        Fisch.prototype.draw = function () {
+            aqua.crc2.beginPath();
+            aqua.crc2.fillStyle = this.color;
+            aqua.crc2.moveTo(this.x, this.y);
+            aqua.crc2.bezierCurveTo(this.x + 30, this.y, this.x + 30, this.y + 20, this.x, this.y + 20);
+            aqua.crc2.moveTo(this.x, this.y + 20);
+            aqua.crc2.lineTo(this.x - 20, this.y + 10);
+            aqua.crc2.lineTo(this.x - 25, this.y + 15);
+            aqua.crc2.lineTo(this.x - 25, this.y);
+            aqua.crc2.lineTo(this.x - 20, this.y + 5);
+            aqua.crc2.lineTo(this.x, this.y);
+            aqua.crc2.closePath();
+            aqua.crc2.stroke();
+            aqua.crc2.fill();
+            aqua.crc2.closePath();
         };
         return Fisch;
-    }());
-    L10_Animation.Fisch = Fisch;
-})(L10_Animation || (L10_Animation = {}));
+    }(aqua.MovingObjects));
+    aqua.Fisch = Fisch;
+})(aqua || (aqua = {}));
 //# sourceMappingURL=Fisch.js.map

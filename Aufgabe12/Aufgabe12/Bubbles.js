@@ -1,23 +1,31 @@
-var L10_Animation;
-(function (L10_Animation) {
-    var Blase = (function () {
-        function Blase() {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var aqua;
+(function (aqua) {
+    var Bubble = (function (_super) {
+        __extends(Bubble, _super);
+        function Bubble(_x, _y, _color) {
+            _super.call(this, _x, _y, _color);
         }
-        // declare method without keyword function
-        Blase.prototype.move = function () {
-            this.x += 0;
-            this.y += 1;
+        Bubble.prototype.move = function () {
+            this.y += -15;
+            if (this.y < 0) {
+                this.y = 1200;
+            }
         };
-        Blase.prototype.drawBubbles = function () {
-            L10_Animation.ctx.beginPath();
-            L10_Animation.crc2.fillStyle = "rgb(0,0,255)";
-            L10_Animation.ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
-            L10_Animation.crc2.closePath();
-            L10_Animation.ctx.stroke();
-            L10_Animation.crc2.fill();
+        Bubble.prototype.draw = function () {
+            aqua.crc2.beginPath();
+            aqua.crc2.arc(this.x, this.y, this.r, 0, 20 * Math.PI);
+            aqua.crc2.fillStyle = this.color;
+            aqua.crc2.closePath();
+            aqua.crc2.stroke();
+            aqua.crc2.fill();
         };
-        return Blase;
-    }());
-    L10_Animation.Blase = Blase;
-})(L10_Animation || (L10_Animation = {}));
+        return Bubble;
+    }(aqua.MovingObjects));
+    aqua.Bubble = Bubble;
+})(aqua || (aqua = {}));
 //# sourceMappingURL=Bubbles.js.map
