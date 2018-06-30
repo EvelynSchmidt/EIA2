@@ -36,14 +36,14 @@ namespace aquaworld {
         //Fische
 
         for ( let i: number = 0; i < afisch; i++ ) {
-        let fish: Fisch = new Fisch(Math.random() * crc2.canvas.width, Math.random() * crc2.canvas.height, "rgb(43,58,68)");            
+        let fish: Fisch = new Fisch(Math.random() * crc2.canvas.width, Math.random() * crc2.canvas.height, "rgb(253,156,113)");            
             
 
             objects.push( fish );
         }
         
         for (let i: number = 0; i < n - 2; i++) {
-            let blubb: Bubble = new Bubble(Math.random() * (1000 - 700) + 0, Math.random() * 180, "rgba(188,210,238,10)");
+            let blubb: Bubble = new Bubble(Math.random() * (1000 - 700) + 0, Math.random() * 180, "rgba(188,210,238,0.9)");
             blubb.r = Math.random() * 10;
             objects.push(blubb);
         }

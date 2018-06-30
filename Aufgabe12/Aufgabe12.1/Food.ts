@@ -18,12 +18,12 @@ namespace aquaworld {
 
         draw(): void {
             crc2.beginPath();
-            crc2.moveTo(this.x - 6, this.y);
-            crc2.lineTo(this.x + 12, this.y + 12);
-            crc2.lineTo(this.x + 10, this.y - 3);
-            crc2.lineTo(this.x + 3, this.y + 20);
-            crc2.lineTo(this.x + - 3, this.y + 9);
-            crc2.lineTo(this.x - 6, this.y + 3);
+            crc2.moveTo(this.x - 2, this.y);
+            crc2.lineTo(this.x + 1, this.y + 5);
+            crc2.lineTo(this.x + 4, this.y - 3);
+            crc2.lineTo(this.x + 7, this.y + 1);
+            crc2.lineTo(this.x + - 1, this.y + 3);
+            crc2.lineTo(this.x - 1, this.y + 2);
             crc2.closePath();
             crc2.stroke();
             crc2.fillStyle = this.color;

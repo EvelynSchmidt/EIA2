@@ -28,11 +28,11 @@ var aquaworld;
         canvas.addEventListener("touchstart", insertNewObject);
         //Fische
         for (var i = 0; i < afisch; i++) {
-            var fish = new aquaworld.Fisch(Math.random() * aquaworld.crc2.canvas.width, Math.random() * aquaworld.crc2.canvas.height, "rgb(43,58,68)");
+            var fish = new aquaworld.Fisch(Math.random() * aquaworld.crc2.canvas.width, Math.random() * aquaworld.crc2.canvas.height, "rgb(253,156,113)");
             objects.push(fish);
         }
         for (var i = 0; i < n - 2; i++) {
-            var blubb = new aquaworld.Bubble(Math.random() * (1000 - 700) + 0, Math.random() * 180, "rgba(188,210,238,10)");
+            var blubb = new aquaworld.Bubble(Math.random() * (1000 - 700) + 0, Math.random() * 180, "rgba(188,210,238,0.9)");
             blubb.r = Math.random() * 10;
             objects.push(blubb);
         }

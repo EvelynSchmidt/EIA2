@@ -18,12 +18,12 @@ var aquaworld;
         };
         Food.prototype.draw = function () {
             aquaworld.crc2.beginPath();
-            aquaworld.crc2.moveTo(this.x - 6, this.y);
-            aquaworld.crc2.lineTo(this.x + 12, this.y + 12);
-            aquaworld.crc2.lineTo(this.x + 10, this.y - 3);
-            aquaworld.crc2.lineTo(this.x + 3, this.y + 20);
-            aquaworld.crc2.lineTo(this.x + -3, this.y + 9);
-            aquaworld.crc2.lineTo(this.x - 6, this.y + 3);
+            aquaworld.crc2.moveTo(this.x - 2, this.y);
+            aquaworld.crc2.lineTo(this.x + 1, this.y + 5);
+            aquaworld.crc2.lineTo(this.x + 4, this.y - 3);
+            aquaworld.crc2.lineTo(this.x + 7, this.y + 1);
+            aquaworld.crc2.lineTo(this.x + -1, this.y + 3);
+            aquaworld.crc2.lineTo(this.x - 1, this.y + 2);
             aquaworld.crc2.closePath();
             aquaworld.crc2.stroke();
             aquaworld.crc2.fillStyle = this.color;
