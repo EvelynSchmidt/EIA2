@@ -5,50 +5,31 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var L11_SeaworldInheritance;
 (function (L11_SeaworldInheritance) {
-    var Food = (function (_super) {
-        __extends(Food, _super);
-        function Food(spawnX, spawnY) {
+    var UFO = (function (_super) {
+        __extends(UFO, _super);
+        function UFO() {
             _super.call(this);
-            this.x = spawnX;
-            this.y = spawnY;
-            this.size = Math.random() * (5 - 4) + 4; // Math.random() * (max - min) + min
-            this.speed = this.size;
-            this.setRandomColor();
-            this.stop = Math.random() * (550 - 680) + 680;
+            this.setRandomPosition();
+            this.setRandomRadius();
         }
-        Food.prototype.setRandomColor = function () {
-            var c = Math.floor(Math.random() * 3);
-            switch (c) {
-                case 0:
-                    this.color = "#A19F30";
-                    break;
-                case 1:
-                    this.color = "#A15A30";
-                    break;
-                case 2:
-                    this.color = "#49854D";
-                    break;
-            }
+        UFO.prototype.setRandomPosition = function () {
+            this.x = Math.random() * L11_SeaworldInheritance.canvas.width - 200;
+            this.y = Math.random() * L11_SeaworldInheritance.canvas.height - 200;
         };
-        Food.prototype.draw = function () {
-            L11_SeaworldInheritance.crc2.fillStyle = this.color;
-            L11_SeaworldInheritance.crc2.lineWidth = 0.2;
-            L11_SeaworldInheritance.crc2.beginPath();
-            L11_SeaworldInheritance.crc2.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
-            L11_SeaworldInheritance.crc2.closePath();
-            L11_SeaworldInheritance.crc2.stroke();
-            L11_SeaworldInheritance.crc2.fill();
+        UFO.prototype.setRandomRadius = function () {
+            this.radius = Math.random() * 10;
         };
-        Food.prototype.move = function () {
-            if (this.y >= this.stop) {
-                this.y = this.stop;
-            }
-            else {
-                this.y += this.speed * 0.4;
-            }
+        UFO.prototype.draw = function () {
+            var img = new Image();
+            img.src = 'UFO.png';
+            L11_SeaworldInheritance.crc2.drawImage(img, this.x, this.y, 200, 200);
         };
-        return Food;
+        UFO.prototype.move = function () {
+            this.x += Math.random() * 100;
+            this.y += Math.random() * 30;
+        };
+        return UFO;
     }(L11_SeaworldInheritance.MovingObject));
-    L11_SeaworldInheritance.Food = Food; //class Food zu
+    L11_SeaworldInheritance.UFO = UFO;
 })(L11_SeaworldInheritance || (L11_SeaworldInheritance = {})); //namespace zu
 //# sourceMappingURL=Stars.js.map

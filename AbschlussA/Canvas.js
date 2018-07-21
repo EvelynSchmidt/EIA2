@@ -7,7 +7,6 @@ var L11_SeaworldInheritance;
         L11_SeaworldInheritance.canvas = document.getElementsByTagName("canvas")[0];
         L11_SeaworldInheritance.crc2 = L11_SeaworldInheritance.canvas.getContext("2d");
         console.log(L11_SeaworldInheritance.crc2);
-        L11_SeaworldInheritance.canvas.addEventListener("click", insertFood);
         L11_SeaworldInheritance.drawBackground();
         imgData = L11_SeaworldInheritance.crc2.getImageData(0, 0, L11_SeaworldInheritance.canvas.width, L11_SeaworldInheritance.canvas.height);
         //Moving Objekte zum ersten mal Erzeugen
@@ -17,39 +16,24 @@ var L11_SeaworldInheritance;
             L11_SeaworldInheritance.movingObjects.push(oneFish);
         }
         //Bubbles rechts
-        for (var i = 0; i < 150; i++) {
+        for (var i = 0; i < 100; i++) {
             var oneBubble = new L11_SeaworldInheritance.Bubble();
             L11_SeaworldInheritance.movingObjects.push(oneBubble);
         }
         //Bubbles links
-        for (var i = 0; i < 18; i++) {
-            var oneBubble = new L11_SeaworldInheritance.BubblesLeft();
+        for (var i = 0; i < 3; i++) {
+            var oneBubble = new L11_SeaworldInheritance.Saturn();
             L11_SeaworldInheritance.movingObjects.push(oneBubble);
         }
-        for (var i = 0; i < 10; i++) {
+        for (var i = 0; i < 5; i++) {
             var Marseins = new L11_SeaworldInheritance.Mars();
             L11_SeaworldInheritance.movingObjects.push(Marseins);
         }
-        animate();
-    } //init zu
-    function insertFood(_event) {
-        //Abfrage f�r x und y des MouseEvents
-        var spawnX = _event.clientX;
-        var spawnY = _event.clientY;
-        for (var i = 0; i < 4; i++) {
-            var food = new L11_SeaworldInheritance.Food(spawnX, spawnY);
-            L11_SeaworldInheritance.movingObjects.push(food);
-            spawnX += Math.random() * 70;
-            spawnX -= Math.random() * 70;
-            spawnY += Math.random() * 10;
-            // Fish finden, der Flocke fressen soll
-            for (var j = 0; j < 8; j++) {
-                var fish = L11_SeaworldInheritance.movingObjects[j];
-                if (fish.food == null) {
-                    break;
-                }
-            }
+        for (var i = 0; i < 1; i++) {
+            var UFOeins = new L11_SeaworldInheritance.UFO();
+            L11_SeaworldInheritance.movingObjects.push(UFOeins);
         }
+        animate();
     }
     function animate() {
         window.setTimeout(animate, 10);
@@ -61,7 +45,6 @@ var L11_SeaworldInheritance;
     function moveObjects() {
         //alle movingObjects bewegen
         for (var i = 0; i < L11_SeaworldInheritance.movingObjects.length; i++) {
-            L11_SeaworldInheritance.movingObjects[i].checkPosition();
             L11_SeaworldInheritance.movingObjects[i].move();
         }
     } //moveObjects zu

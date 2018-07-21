@@ -12,14 +12,14 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var L11_SeaworldInheritance;
 (function (L11_SeaworldInheritance) {
-    var FlyingStars = (function (_super) {
-        __extends(FlyingStars, _super);
-        function FlyingStars() {
+    var PlanetB = (function (_super) {
+        __extends(PlanetB, _super);
+        function PlanetB() {
             _super.call(this);
             this.huntspeed = 0.1;
             this.distanceToEat = 5;
         }
-        FlyingStars.prototype.draw = function () {
+        PlanetB.prototype.draw = function () {
             L11_SeaworldInheritance.crc2.fillStyle = "rgb(204, 238, 255, 0.55)";
             L11_SeaworldInheritance.crc2.lineWidth = 0.5;
             L11_SeaworldInheritance.crc2.beginPath();
@@ -28,9 +28,9 @@ var L11_SeaworldInheritance;
             L11_SeaworldInheritance.crc2.stroke();
             L11_SeaworldInheritance.crc2.fill();
         };
-        return FlyingStars;
+        return PlanetB;
     }(L11_SeaworldInheritance.MovingObject));
-    L11_SeaworldInheritance.FlyingStars = FlyingStars;
+    L11_SeaworldInheritance.PlanetB = PlanetB;
 })(L11_SeaworldInheritance || (L11_SeaworldInheritance = {})); //class fish zu
 //namespace zu} //namespace zu 
 //# sourceMappingURL=FlyingStars.js.map

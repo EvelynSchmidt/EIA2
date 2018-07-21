@@ -10,7 +10,6 @@ namespace L11_SeaworldInheritance {
     export class PlanetB extends MovingObject {
         color: string;
         speed: number;
-        food: Food;
                 radius: number;
 
         private huntspeed: number = 0.1;

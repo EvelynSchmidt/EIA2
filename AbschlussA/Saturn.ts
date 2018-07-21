@@ -1,5 +1,6 @@
 namespace L11_SeaworldInheritance {
-       export class UFO extends MovingObject {
+    export class Saturn extends MovingObject{
+
         radius: number;
        
 
@@ -12,7 +13,7 @@ namespace L11_SeaworldInheritance {
         
         setRandomPosition(): void {
             this.x = Math.random() * canvas.width - 200;
-            this.y = Math.random() * canvas.height - 200;
+            this.y = Math.random() * canvas.height - 100;
         }
 
 
@@ -20,19 +21,16 @@ namespace L11_SeaworldInheritance {
             this.radius = Math.random() * 10;
            
         }
-
-
-draw() 
- {  
+draw(){
     var img = new Image(); 
-    img.src = 'UFO.png'; 
+    img.src = 'Saturn.png'; 
     crc2.drawImage(img,this.x,this.y, 200, 200); 
     
 }
         move(): void {
-            this.x += Math.random()*100;
-            this.y += Math.random()*30;
-            
+            this.x += 0;
+            this.y += Math.random()*100;
         }
-        
-} }//namespace zu
+
+    } //class BubblesLeft zu
+} //namespace zu
