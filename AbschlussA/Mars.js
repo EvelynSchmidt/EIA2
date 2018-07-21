@@ -25,7 +25,7 @@ var L11_SeaworldInheritance;
             L11_SeaworldInheritance.crc2.drawImage(img, this.x, this.y, 200, 200);
         };
         Mars.prototype.move = function () {
-            this.x += Math.random() * -100;
+            this.x += Math.random() * 100;
             this.y += Math.random() * 30;
         };
         return Mars;

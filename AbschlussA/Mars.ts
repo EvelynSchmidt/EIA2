@@ -30,8 +30,10 @@ draw()
     
 }
         move(): void {
-            this.x += Math.random()*-100;
+            this.x += Math.random()*100;
             this.y += Math.random()*30;
+            
         }
+        
 
         }}
