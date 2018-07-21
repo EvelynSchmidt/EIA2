@@ -16,14 +16,6 @@ var aqua;
                 this.y = 1200;
             }
         };
-        Bubble.prototype.draw = function () {
-            aqua.crc2.beginPath();
-            aqua.crc2.arc(this.x, this.y, this.r, 0, 20 * Math.PI);
-            aqua.crc2.fillStyle = this.color;
-            aqua.crc2.closePath();
-            aqua.crc2.stroke();
-            aqua.crc2.fill();
-        };
         return Bubble;
     }(aqua.MovingObjects));
     aqua.Bubble = Bubble;

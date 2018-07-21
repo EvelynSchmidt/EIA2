@@ -16,14 +16,7 @@ export class Bubble extends MovingObjects {
         }
 
 
-        draw(): void {
-            crc2.beginPath();
-            crc2.arc(this.x, this.y, this.r, 0, 20 * Math.PI);
-            crc2.fillStyle = this.color;
-            crc2.closePath();
-            crc2.stroke();
-            crc2.fill();
-        }
+       
     }
 
 
