@@ -7,23 +7,33 @@ var L11_SeaworldInheritance;
         L11_SeaworldInheritance.canvas = document.getElementsByTagName("canvas")[0];
         L11_SeaworldInheritance.crc2 = L11_SeaworldInheritance.canvas.getContext("2d");
         console.log(L11_SeaworldInheritance.crc2);
+        var elem = document.getElementById('canvas');
+        var elemLeft = elem.offsetLeft;
+        var elemTop = elem.offsetTop;
+        var element = [];
         L11_SeaworldInheritance.drawBackground();
         imgData = L11_SeaworldInheritance.crc2.getImageData(0, 0, L11_SeaworldInheritance.canvas.width, L11_SeaworldInheritance.canvas.height);
+        document.getElementById('canvas').addEventListener('click', function (evt) {
+            var x = evt.clientX - elemLeft;
+            var y = evt.clientY - elemTop;
+            L11_SeaworldInheritance.movingObjects.forEach(function (movingObjects) {
+                if (y == movingObjects.y && x == movingObjects.x) {
+                    alert('clicked an element');
+                }
+            });
+        }, false);
         //Moving Objekte zum ersten mal Erzeugen
-        //Fische
         for (var i = 0; i < 5; i++) {
-            var oneFish = new L11_SeaworldInheritance.Neptun();
-            L11_SeaworldInheritance.movingObjects.push(oneFish);
+            var Neptuneins = new L11_SeaworldInheritance.Neptun();
+            L11_SeaworldInheritance.movingObjects.push(Neptuneins);
         }
-        //Bubbles rechts
-        for (var i = 0; i < 100; i++) {
-            var oneBubble = new L11_SeaworldInheritance.Bubble();
-            L11_SeaworldInheritance.movingObjects.push(oneBubble);
+        for (var i = 0; i < 150; i++) {
+            var Starskyeins = new L11_SeaworldInheritance.Starsky();
+            L11_SeaworldInheritance.movingObjects.push(Starskyeins);
         }
-        //Bubbles links
         for (var i = 0; i < 3; i++) {
-            var oneBubble = new L11_SeaworldInheritance.Saturn();
-            L11_SeaworldInheritance.movingObjects.push(oneBubble);
+            var Saturneins = new L11_SeaworldInheritance.Saturn();
+            L11_SeaworldInheritance.movingObjects.push(Saturneins);
         }
         for (var i = 0; i < 5; i++) {
             var Marseins = new L11_SeaworldInheritance.Mars();
@@ -33,11 +43,14 @@ var L11_SeaworldInheritance;
             var UFOeins = new L11_SeaworldInheritance.UFO();
             L11_SeaworldInheritance.movingObjects.push(UFOeins);
         }
+        for (var i = 0; i < 4; i++) {
+            var flyingstarseins = new L11_SeaworldInheritance.FlyingStars();
+            L11_SeaworldInheritance.movingObjects.push(flyingstarseins);
+        }
         animate();
     }
     function animate() {
-        window.setTimeout(animate, 10);
-        L11_SeaworldInheritance.crc2.clearRect(0, 0, L11_SeaworldInheritance.crc2.canvas.width, L11_SeaworldInheritance.crc2.canvas.height);
+        window.setTimeout(animate, 75);
         L11_SeaworldInheritance.crc2.putImageData(imgData, 0, 0);
         moveObjects();
         drawObjects();
@@ -52,6 +65,6 @@ var L11_SeaworldInheritance;
         //alle movingObjects malen
         for (var i = 0; i < L11_SeaworldInheritance.movingObjects.length; i++)
             L11_SeaworldInheritance.movingObjects[i].draw();
-    } //drawObjects zu
-})(L11_SeaworldInheritance || (L11_SeaworldInheritance = {})); //namespace zu
+    }
+})(L11_SeaworldInheritance || (L11_SeaworldInheritance = {})); //drawObjects zu
 //# sourceMappingURL=Canvas.js.map

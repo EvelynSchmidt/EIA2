@@ -5,17 +5,17 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var L11_SeaworldInheritance;
 (function (L11_SeaworldInheritance) {
-    var Bubble = (function (_super) {
-        __extends(Bubble, _super);
-        function Bubble() {
+    var Starsky = (function (_super) {
+        __extends(Starsky, _super);
+        function Starsky() {
             _super.call(this);
             this.setRandomPosition();
         }
-        Bubble.prototype.setRandomPosition = function () {
+        Starsky.prototype.setRandomPosition = function () {
             this.x = Math.random() * L11_SeaworldInheritance.canvas.width;
             this.y = Math.random() * L11_SeaworldInheritance.canvas.height;
         };
-        Bubble.prototype.draw = function () {
+        Starsky.prototype.draw = function () {
             L11_SeaworldInheritance.crc2.fillStyle = "#FFF";
             L11_SeaworldInheritance.crc2.moveTo(this.x, this.y + 5);
             L11_SeaworldInheritance.crc2.lineTo(this.x - 4, this.y);
@@ -31,8 +31,8 @@ var L11_SeaworldInheritance;
             L11_SeaworldInheritance.crc2.closePath();
             L11_SeaworldInheritance.crc2.fill();
         };
-        return Bubble;
+        return Starsky;
     }(L11_SeaworldInheritance.MovingObject));
-    L11_SeaworldInheritance.Bubble = Bubble;
+    L11_SeaworldInheritance.Starsky = Starsky;
 })(L11_SeaworldInheritance || (L11_SeaworldInheritance = {}));
 //# sourceMappingURL=Starsky.js.map

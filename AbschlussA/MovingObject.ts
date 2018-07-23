@@ -1,4 +1,3 @@
-
 namespace L11_SeaworldInheritance {
     export class MovingObject {
         x: number;

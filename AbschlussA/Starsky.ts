@@ -1,5 +1,5 @@
 namespace L11_SeaworldInheritance {
-    export class Bubble extends MovingObject {
+    export class Starsky extends MovingObject {
         radius: number;
        
 

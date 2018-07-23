@@ -22,15 +22,29 @@ namespace L11_SeaworldInheritance {
            
         }
 draw(){
-    var img = new Image(); 
+
+
+    let img = new Image(); 
     img.src = 'Saturn.png'; 
     crc2.drawImage(img,this.x,this.y, 200, 200); 
-    
+
 }
         move(): void {
-            this.x += 0;
-            this.y += Math.random()*100;
-        }
+            this.x -= Math.random()*50;
+            this.y -= Math.random()+30;
+        
+        if (this.x > canvas.width) {
+        this.x = 0;
+    }
+       if (this.x < 0) {
+        this.x = canvas.width;
+    }      
+if (this.y > canvas.height) {
+        this.y = 0;
+    }
+       if (this.y < 0) {
+        this.y = canvas.height;
+    }       }
 
     } //class BubblesLeft zu
 } //namespace zu

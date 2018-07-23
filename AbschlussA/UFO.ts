@@ -30,9 +30,21 @@ draw()
     
 }
         move(): void {
-            this.x += Math.random()*100;
-            this.y += Math.random()*30;
+            this.x -= 3;
+            this.y += 20;
             
-        }
+         
+        if (this.x > canvas.width) {
+        this.x = 0;
+    }
+       if (this.x < 0) {
+        this.x = canvas.width;
+    }      
+if (this.y > canvas.height) {
+        this.y = 0;
+    }
+       if (this.y < 0) {
+        this.y = canvas.height;
+    }      }
         
 } }//namespace zu

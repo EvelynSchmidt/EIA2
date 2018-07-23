@@ -1,37 +1,63 @@
-/*  Aufgabe: Aufgabe 11 : Inheritance: Seaworld
-    Name: Anna Lotz
-    Matrikel: 257449
-    Datum: 28.06.18
-    
-    Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
-    Dieser Code wurde zusammen mit Alena Hurst und Franziska Hei� erarbeitet */
-
 namespace L11_SeaworldInheritance {
-    export class PlanetB extends MovingObject {
-        color: string;
-        speed: number;
-                radius: number;
+    export class FlyingStars extends MovingObject {
+        radius: number;
 
-        private huntspeed: number = 0.1;
-        private distanceToEat: number = 5;
 
         constructor() {
             super();
-           
+            this.setRandomPosition();
+            this.setRandomRadius();
         }
 
-draw(): void {
-            crc2.fillStyle = "rgb(204, 238, 255, 0.55)";
-            crc2.lineWidth = 0.5;
+
+        setRandomPosition(): void {
+            this.x = Math.random() * canvas.width - 200;
+            this.y = Math.random() * canvas.height - 100;
+        }
+
+
+        setRandomRadius(): void {
+            this.radius = Math.random() * 10;
+
+        }
+
+
+        draw() {
             crc2.beginPath();
-            crc2.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+            crc2.fillStyle = "#FFFF00";
+
+            crc2.lineTo(this.x - 8, this.y);
+            crc2.lineTo(this.x + 2, this.y - 10);
+            crc2.lineTo(this.x - 12, this.y - 6);
+            crc2.lineTo(this.x - 20, this.y - 16);
+            crc2.lineTo(this.x - 20, this.y - 4);
+            crc2.lineTo(this.x - 32, this.y + 2);
+            crc2.lineTo(this.x - 20, this.y + 2);
+            crc2.lineTo(this.x - 20, this.y + 14);
+            crc2.lineTo(this.x - 12, this.y + 4);
+
+            crc2.lineTo(this.x, this.y + 10);
             crc2.closePath();
-            crc2.stroke();
             crc2.fill();
         }
 
-       
-        }
+        move(): void {
+            this.x += 90;
+            this.y += 3;
 
-    } //class fish zu
- //namespace zu} //namespace zu
+            if (this.x > canvas.width) {
+                this.x = 0;
+            }
+            if (this.x < 0) {
+                this.x = canvas.width;
+            }
+            if (this.y > canvas.height) {
+                this.y = 0;
+            }
+            if (this.y < 0) {
+                this.y = canvas.height;
+            }
+
+        }
+    }
+}

@@ -12,7 +12,7 @@ namespace L11_SeaworldInheritance {
         
         setRandomPosition(): void {
             this.x = Math.random() * canvas.width - 200;
-            this.y = Math.random() * canvas.height - 100;
+            this.y = Math.random() * canvas.height - 200;
         }
 
 
@@ -30,9 +30,22 @@ draw()
     
 }
         move(): void {
-            this.x += Math.random()*100;
-            this.y += 0;
+            this.x += Math.random()+20;
+            this.y += 20;
+           
+        if (this.x > canvas.width) {
+        this.x = 0;
+    }
+       if (this.x < 0) {
+        this.x = canvas.width;
+    }      
+if (this.y > canvas.height) {
+        this.y = 0;
+    }
+       if (this.y < 0) {
+        this.y = canvas.height;
+    }        
         }
-       
+        
 
         }}

@@ -1,0 +1,13 @@
+
+@font-face { font-family: 'Star_Jedi_Rounded';
+             src: url('Star_Jedi_Rounded.ttf')  format('truetype')}
+
+h1 {font-family:'Star_Jedi_Rounded';
+	font-size: 60px;
+	text-align: center;
+	color: #7d1fce }
+p {font-family: 'Star_Jedi_Rounded'; font-size: 20px;
+color: #7d1fce;
+	text-align: center; position: relative; top: -50px
+}
+canvas {position: relative; top: -40px; }

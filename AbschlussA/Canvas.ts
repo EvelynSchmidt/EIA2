@@ -2,6 +2,7 @@ namespace L11_SeaworldInheritance {
 
     window.addEventListener("load", init);
     export let crc2: CanvasRenderingContext2D;
+
     export let canvas: HTMLCanvasElement;
     let imgData: ImageData;
 
@@ -12,31 +13,48 @@ namespace L11_SeaworldInheritance {
         canvas = document.getElementsByTagName("canvas")[0];
         crc2 = canvas.getContext("2d");
         console.log(crc2);
-    
+
+        var elem = document.getElementById('canvas');
+        var elemLeft = elem.offsetLeft;
+        var elemTop = elem.offsetTop;
+        let element: number[] = [];
+
 
         drawBackground();
         imgData = crc2.getImageData(0, 0, canvas.width, canvas.height);
 
 
+
+        document.getElementById('canvas').addEventListener('click', function(evt) {
+            var x = evt.clientX - elemLeft
+            var y = evt.clientY - elemTop;
+            movingObjects.forEach(function(movingObjects) {
+        if (y == movingObjects.y   && x == movingObjects.x ) {
+            alert('clicked an element');
+        }
+    });
+
+}, false);
+      
+        
+        
         //Moving Objekte zum ersten mal Erzeugen
-        //Fische
+
         for (let i: number = 0; i < 5; i++) {
-            let oneFish: Neptun = new Neptun();
-            movingObjects.push(oneFish);
+            let Neptuneins: Neptun = new Neptun();
+            movingObjects.push(Neptuneins);
+        }
+        for (let i: number = 0; i < 150; i++) {
+            let Starskyeins: Starsky = new Starsky();
+            movingObjects.push(Starskyeins);
         }
 
-        //Bubbles rechts
-        for (let i: number = 0; i < 100; i++) {
-            let oneBubble: Bubble = new Bubble();
-            movingObjects.push(oneBubble);
-        }
-        //Bubbles links
         for (let i: number = 0; i < 3; i++) {
-            let oneBubble: Saturn = new Saturn();
-            movingObjects.push(oneBubble);
+            let Saturneins: Saturn = new Saturn();
+            movingObjects.push(Saturneins);
         }
 
-         for (let i: number = 0; i < 5; i++) {
+        for (let i: number = 0; i < 5; i++) {
             let Marseins: Mars = new Mars();
             movingObjects.push(Marseins);
         }
@@ -45,12 +63,15 @@ namespace L11_SeaworldInheritance {
             let UFOeins: UFO = new UFO();
             movingObjects.push(UFOeins);
         }
+        for (let i: number = 0; i < 4; i++) {
+            let flyingstarseins: FlyingStars = new FlyingStars();
+            movingObjects.push(flyingstarseins);
+        }
         animate();
 
-    } 
+    }
     function animate(): void {
-        window.setTimeout(animate, 10);
-        crc2.clearRect(0, 0, crc2.canvas.width, crc2.canvas.height);
+        window.setTimeout(animate, 75);
         crc2.putImageData(imgData, 0, 0);
 
         moveObjects();
@@ -61,7 +82,7 @@ namespace L11_SeaworldInheritance {
 
         //alle movingObjects bewegen
         for (let i: number = 0; i < movingObjects.length; i++) {
-            
+
             movingObjects[i].move();
         }
 
@@ -73,5 +94,7 @@ namespace L11_SeaworldInheritance {
         for (let i: number = 0; i < movingObjects.length; i++)
             movingObjects[i].draw();
 
-    } //drawObjects zu
-} //namespace zu
+    }
+
+
+}//drawObjects zu

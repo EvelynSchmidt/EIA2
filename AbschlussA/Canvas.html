@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Spaceworld</title>
+<title>Spaceworld </title>
 <meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="Spaceworld.css">
+
 <script src="MovingObject.js" type="text/javascript" charset="utf-8"></script>
 <script src="Background.js" type="text/javascript" charset="utf-8"></script>
+<script src="Saturn.js" type="text/javascript" charset="utf-8"></script>
 <script src="Mars.js" type="text/javascript" charset="utf-8"></script>
 <script src="Neptun.js" type="text/javascript" charset="utf-8"></script>
-
-<script src="Starsky.js" type="text/javascript" charset="utf-8"></script>
 <script src="FlyingStars.js" type="text/javascript" charset="utf-8"></script>
-<script src="Stars.js" type="text/javascript" charset="utf-8"></script>
-<script src="Saturn.js" type="text/javascript" charset="utf-8"></script>
+<script src="Starsky.js" type="text/javascript" charset="utf-8"></script>
+<script src="UFO.js" type="text/javascript" charset="utf-8"></script>
+
 <script src="Canvas.js" type="text/javascript" charset="utf-8"></script>
  </head>
 <body>
-	<canvas width=1000 height=700></canvas>
+	<h1>★ Spaceworld ★</h1>
+	<p> Catch the ufo to recieve points </p>
+	<canvas id= 'canvas' width=1000 height=700>
+	</canvas>
+	<div style="display:none;">
+  <img id="saturn" src="saturn.png">
+</div>
+	
+	<p id= "points">Points</p>
 </body>
 </html>

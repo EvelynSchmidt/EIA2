@@ -25,8 +25,20 @@ var L11_SeaworldInheritance;
             L11_SeaworldInheritance.crc2.drawImage(img, this.x, this.y, 200, 200);
         };
         Saturn.prototype.move = function () {
-            this.x += 0;
-            this.y += Math.random() * 100;
+            this.x -= Math.random() * 50;
+            this.y -= Math.random() + 30;
+            if (this.x > L11_SeaworldInheritance.canvas.width) {
+                this.x = 0;
+            }
+            if (this.x < 0) {
+                this.x = L11_SeaworldInheritance.canvas.width;
+            }
+            if (this.y > L11_SeaworldInheritance.canvas.height) {
+                this.y = 0;
+            }
+            if (this.y < 0) {
+                this.y = L11_SeaworldInheritance.canvas.height;
+            }
         };
         return Saturn;
     }(L11_SeaworldInheritance.MovingObject));

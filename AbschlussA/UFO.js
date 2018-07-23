@@ -25,11 +25,23 @@ var L11_SeaworldInheritance;
             L11_SeaworldInheritance.crc2.drawImage(img, this.x, this.y, 200, 200);
         };
         UFO.prototype.move = function () {
-            this.x += Math.random() * 100;
-            this.y += Math.random() * 30;
+            this.x -= 3;
+            this.y += 20;
+            if (this.x > L11_SeaworldInheritance.canvas.width) {
+                this.x = 0;
+            }
+            if (this.x < 0) {
+                this.x = L11_SeaworldInheritance.canvas.width;
+            }
+            if (this.y > L11_SeaworldInheritance.canvas.height) {
+                this.y = 0;
+            }
+            if (this.y < 0) {
+                this.y = L11_SeaworldInheritance.canvas.height;
+            }
         };
         return UFO;
     }(L11_SeaworldInheritance.MovingObject));
     L11_SeaworldInheritance.UFO = UFO;
 })(L11_SeaworldInheritance || (L11_SeaworldInheritance = {})); //namespace zu
-//# sourceMappingURL=Stars.js.map
+//# sourceMappingURL=UFO.js.map
