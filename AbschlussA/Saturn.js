@@ -25,8 +25,8 @@ var L11_SeaworldInheritance;
             L11_SeaworldInheritance.crc2.drawImage(img, this.x, this.y, 200, 200);
         };
         Saturn.prototype.move = function () {
-            this.x -= Math.random() * 50;
-            this.y -= Math.random() + 30;
+            this.x -= Math.random() + 40;
+            this.y -= Math.random() * 10;
             if (this.x > L11_SeaworldInheritance.canvas.width) {
                 this.x = 0;
             }

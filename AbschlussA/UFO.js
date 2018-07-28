@@ -25,8 +25,8 @@ var L11_SeaworldInheritance;
             L11_SeaworldInheritance.crc2.drawImage(img, this.x, this.y, 200, 200);
         };
         UFO.prototype.move = function () {
-            this.x -= 3;
-            this.y += 20;
+            this.x -= Math.random() + 13;
+            this.y += Math.random() * 3;
             if (this.x > L11_SeaworldInheritance.canvas.width) {
                 this.x = 0;
             }

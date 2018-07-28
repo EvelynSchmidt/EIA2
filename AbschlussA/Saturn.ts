@@ -30,8 +30,8 @@ draw(){
 
 }
         move(): void {
-            this.x -= Math.random()*50;
-            this.y -= Math.random()+30;
+            this.x -= Math.random()+40;
+            this.y -= Math.random()*10;
         
         if (this.x > canvas.width) {
         this.x = 0;

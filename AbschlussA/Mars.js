@@ -26,7 +26,7 @@ var L11_SeaworldInheritance;
         };
         Mars.prototype.move = function () {
             this.x += Math.random() + 40;
-            this.y += 0;
+            this.y += Math.random() + 7;
             if (this.x > L11_SeaworldInheritance.canvas.width) {
                 this.x = 0;
             }

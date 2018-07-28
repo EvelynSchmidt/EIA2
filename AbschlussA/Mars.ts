@@ -30,7 +30,7 @@ namespace L11_SeaworldInheritance {
         }
         move(): void {
             this.x += Math.random() + 40;
-            this.y += 0;
+            this.y += Math.random()+7;
 
             if (this.x > canvas.width) {
                 this.x = 0;

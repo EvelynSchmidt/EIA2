@@ -8,6 +8,7 @@ namespace L11_SeaworldInheritance {
 
     export let movingObjects: MovingObject[] = [];
 
+
     function init(_event: Event): void {
 
         canvas = document.getElementsByTagName("canvas")[0];
@@ -18,6 +19,9 @@ namespace L11_SeaworldInheritance {
         var elemLeft = elem.offsetLeft;
         var elemTop = elem.offsetTop;
         let element: number[] = [];
+        var scoreText: number;
+
+        var score: number = 3;
 
 
         drawBackground();
@@ -25,21 +29,12 @@ namespace L11_SeaworldInheritance {
 
 
 
-        document.getElementById('canvas').addEventListener('click', function(evt) {
-            var x = evt.clientX - elemLeft
-            var y = evt.clientY - elemTop;
-            movingObjects.forEach(function(movingObjects) {
-        if (y == movingObjects.y   && x == movingObjects.x ) {
-            alert('clicked an element');
-        }
-    });
-
-}, false);
-      
-        
-        
         //Moving Objekte zum ersten mal Erzeugen
 
+        for (let i: number = 0; i < 4; i++) {
+            let flyingstarseins: FlyingStars = new FlyingStars();
+            movingObjects.push(flyingstarseins);
+        }
         for (let i: number = 0; i < 5; i++) {
             let Neptuneins: Neptun = new Neptun();
             movingObjects.push(Neptuneins);
@@ -63,38 +58,61 @@ namespace L11_SeaworldInheritance {
             let UFOeins: UFO = new UFO();
             movingObjects.push(UFOeins);
         }
-        for (let i: number = 0; i < 4; i++) {
-            let flyingstarseins: FlyingStars = new FlyingStars();
-            movingObjects.push(flyingstarseins);
-        }
+
         animate();
 
-    }
-    function animate(): void {
-        window.setTimeout(animate, 75);
-        crc2.putImageData(imgData, 0, 0);
 
-        moveObjects();
-        drawObjects();
-    } //animate zu
+        document.getElementById('canvas').addEventListener('click', function(evt) {
+            var x = evt.clientX - elemLeft;
+            var y = evt.clientY - elemTop;
 
-    function moveObjects(): void {
+            movingObjects.forEach(function(movingObjects) {
+                let distance: number = Math.sqrt(movingObjects.y - y) * (movingObjects.y - y) + (movingObjects.x - x) * (movingObjects.x - x);
 
-        //alle movingObjects bewegen
-        for (let i: number = 0; i < movingObjects.length; i++) {
 
-            movingObjects[i].move();
+                if (distance > 600) {
+
+
+                  console.log(movingObjects.constructor.name);
+                 }
+                let playerScore: string = score.toString();
+                document.getElementById('points').innerHTML = playerScore;
+
+
+            });
+
+        }, false);
+
+        function animate(): void {
+            window.setTimeout(animate, 75);
+            crc2.putImageData(imgData, 0, 0);
+
+            moveObjects();
+            drawObjects();
+
+        } //animate zu
+
+        function moveObjects(): void {
+
+            //alle movingObjects bewegen
+            for (let i: number = 0; i < movingObjects.length; i++) {
+
+                movingObjects[i].move();
+            }
+
+        } //moveObjects zu
+
+     
+        } //moveObjects zu
+        function drawObjects(): void {
+
+            //alle movingObjects malen
+            for (let i: number = 0; i < movingObjects.length; i++)
+                movingObjects[i].draw();
+
         }
-
-    } //moveObjects zu
-
-    function drawObjects(): void {
-
-        //alle movingObjects malen
-        for (let i: number = 0; i < movingObjects.length; i++)
-            movingObjects[i].draw();
-
-    }
+     
 
 
-}//drawObjects zu
+        } //drawObjects zu
+    
