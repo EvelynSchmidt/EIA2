@@ -3,56 +3,52 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var L11_SeaworldInheritance;
-(function (L11_SeaworldInheritance) {
+var Spaceworld;
+(function (Spaceworld) {
     var FlyingStars = (function (_super) {
         __extends(FlyingStars, _super);
         function FlyingStars() {
             _super.call(this);
             this.setRandomPosition();
-            this.setRandomRadius();
         }
         FlyingStars.prototype.setRandomPosition = function () {
-            this.x = Math.random() * L11_SeaworldInheritance.canvas.width - 200;
-            this.y = Math.random() * L11_SeaworldInheritance.canvas.height - 100;
-        };
-        FlyingStars.prototype.setRandomRadius = function () {
-            this.radius = Math.random() * 10;
+            this.x = Math.random() * Spaceworld.canvas.width - 200;
+            this.y = Math.random() * Spaceworld.canvas.height - 100;
         };
         FlyingStars.prototype.draw = function () {
-            L11_SeaworldInheritance.crc2.beginPath();
-            L11_SeaworldInheritance.crc2.fillStyle = "#FFFF00";
-            L11_SeaworldInheritance.crc2.lineTo(this.x - 8, this.y);
-            L11_SeaworldInheritance.crc2.lineTo(this.x + 2, this.y - 10);
-            L11_SeaworldInheritance.crc2.lineTo(this.x - 12, this.y - 6);
-            L11_SeaworldInheritance.crc2.lineTo(this.x - 20, this.y - 16);
-            L11_SeaworldInheritance.crc2.lineTo(this.x - 20, this.y - 4);
-            L11_SeaworldInheritance.crc2.lineTo(this.x - 32, this.y + 2);
-            L11_SeaworldInheritance.crc2.lineTo(this.x - 20, this.y + 2);
-            L11_SeaworldInheritance.crc2.lineTo(this.x - 20, this.y + 14);
-            L11_SeaworldInheritance.crc2.lineTo(this.x - 12, this.y + 4);
-            L11_SeaworldInheritance.crc2.lineTo(this.x, this.y + 10);
-            L11_SeaworldInheritance.crc2.closePath();
-            L11_SeaworldInheritance.crc2.fill();
+            Spaceworld.crc2.beginPath();
+            Spaceworld.crc2.fillStyle = "#FFFF00";
+            Spaceworld.crc2.lineTo(this.x - 8, this.y);
+            Spaceworld.crc2.lineTo(this.x + 2, this.y - 10);
+            Spaceworld.crc2.lineTo(this.x - 12, this.y - 6);
+            Spaceworld.crc2.lineTo(this.x - 20, this.y - 16);
+            Spaceworld.crc2.lineTo(this.x - 20, this.y - 4);
+            Spaceworld.crc2.lineTo(this.x - 32, this.y + 2);
+            Spaceworld.crc2.lineTo(this.x - 20, this.y + 2);
+            Spaceworld.crc2.lineTo(this.x - 20, this.y + 14);
+            Spaceworld.crc2.lineTo(this.x - 12, this.y + 4);
+            Spaceworld.crc2.lineTo(this.x, this.y + 10);
+            Spaceworld.crc2.closePath();
+            Spaceworld.crc2.fill();
         };
         FlyingStars.prototype.move = function () {
             this.x += 90;
             this.y += 3;
-            if (this.x > L11_SeaworldInheritance.canvas.width) {
+            if (this.x > Spaceworld.canvas.width) {
                 this.x = 0;
             }
             if (this.x < 0) {
-                this.x = L11_SeaworldInheritance.canvas.width;
+                this.x = Spaceworld.canvas.width;
             }
-            if (this.y > L11_SeaworldInheritance.canvas.height) {
+            if (this.y > Spaceworld.canvas.height) {
                 this.y = 0;
             }
             if (this.y < 0) {
-                this.y = L11_SeaworldInheritance.canvas.height;
+                this.y = Spaceworld.canvas.height;
             }
         };
         return FlyingStars;
-    }(L11_SeaworldInheritance.MovingObject));
-    L11_SeaworldInheritance.FlyingStars = FlyingStars;
-})(L11_SeaworldInheritance || (L11_SeaworldInheritance = {}));
+    }(Spaceworld.MovingObject));
+    Spaceworld.FlyingStars = FlyingStars;
+})(Spaceworld || (Spaceworld = {}));
 //# sourceMappingURL=FlyingStars.js.map

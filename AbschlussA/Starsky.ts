@@ -1,4 +1,4 @@
-namespace L11_SeaworldInheritance {
+namespace Spaceworld {
     export class Starsky extends MovingObject {
         radius: number;
        

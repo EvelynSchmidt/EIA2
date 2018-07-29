@@ -1,4 +1,4 @@
-namespace L11_SeaworldInheritance {
+namespace Spaceworld {
     export class Saturn extends MovingObject{
 
         radius: number;
@@ -7,7 +7,6 @@ namespace L11_SeaworldInheritance {
         constructor() {
             super();
             this.setRandomPosition();
-            this.setRandomRadius();
         }
 
         
@@ -17,10 +16,7 @@ namespace L11_SeaworldInheritance {
         }
 
 
-        setRandomRadius(): void {
-            this.radius = Math.random() * 10;
-           
-        }
+    
 draw(){
 
 

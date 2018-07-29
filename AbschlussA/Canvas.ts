@@ -1,4 +1,4 @@
-namespace L11_SeaworldInheritance {
+namespace Spaceworld {
 
     window.addEventListener("load", init);
     export let crc2: CanvasRenderingContext2D;
@@ -21,7 +21,7 @@ namespace L11_SeaworldInheritance {
         let element: number[] = [];
         var scoreText: number;
 
-        var score: number = 3;
+        var score: number = 0;
 
 
         drawBackground();
@@ -29,7 +29,7 @@ namespace L11_SeaworldInheritance {
 
 
 
-        //Moving Objekte zum ersten mal Erzeugen
+        //Objekte erzeugen
 
         for (let i: number = 0; i < 4; i++) {
             let flyingstarseins: FlyingStars = new FlyingStars();
@@ -58,30 +58,32 @@ namespace L11_SeaworldInheritance {
             let UFOeins: UFO = new UFO();
             movingObjects.push(UFOeins);
         }
-
         animate();
 
-
+//KLick evennt
         document.getElementById('canvas').addEventListener('click', function(evt) {
-            var x = evt.clientX - elemLeft;
-            var y = evt.clientY - elemTop;
 
-            movingObjects.forEach(function(movingObjects) {
-                let distance: number = Math.sqrt(movingObjects.y - y) * (movingObjects.y - y) + (movingObjects.x - x) * (movingObjects.x - x);
+            movingObjects.forEach(function(movingObject: MovingObject) {
+                var x = evt.clientX - elemLeft;
+                var y = evt.clientY - elemTop;
+                let distance: number = Math.sqrt((movingObject.y - y) * (movingObject.y - y) + (movingObject.x - x) * (movingObject.x - x));
+//initieren Distanz
+                if (distance < 30) {
+                    if (movingObject.constructor.prototype === UFO.prototype) {
+                        score += 50
+                    }
+                    else { score-- }
 
-
-                if (distance > 600) {
-
-
-                  console.log(movingObjects.constructor.name);
-                 }
+                }// Score
+                if (score < 0) { alert("Gameover! Try again. May the force be with you"); score = 0; }
                 let playerScore: string = score.toString();
                 document.getElementById('points').innerHTML = playerScore;
 
-
             });
 
+
         }, false);
+
 
         function animate(): void {
             window.setTimeout(animate, 75);
@@ -90,7 +92,7 @@ namespace L11_SeaworldInheritance {
             moveObjects();
             drawObjects();
 
-        } //animate zu
+        } 
 
         function moveObjects(): void {
 
@@ -100,19 +102,18 @@ namespace L11_SeaworldInheritance {
                 movingObjects[i].move();
             }
 
-        } //moveObjects zu
-
-     
-        } //moveObjects zu
-        function drawObjects(): void {
-
-            //alle movingObjects malen
-            for (let i: number = 0; i < movingObjects.length; i++)
-                movingObjects[i].draw();
-
-        }
-     
+        } 
 
 
-        } //drawObjects zu
-    
+    } //moveObjects zu
+    function drawObjects(): void {
+
+        //alle movingObjects malen
+        for (let i: number = 0; i < movingObjects.length; i++)
+            movingObjects[i].draw();
+
+
+
+
+    } 
+}

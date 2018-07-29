@@ -1,8 +1,11 @@
-var L11_SeaworldInheritance;
-(function (L11_SeaworldInheritance) {
+var Spaceworld;
+(function (Spaceworld) {
     var MovingObject = (function () {
         function MovingObject() {
         }
+        MovingObject.prototype.checkPosition = function () {
+            //    
+        };
         MovingObject.prototype.move = function () {
             //
         };
@@ -11,6 +14,6 @@ var L11_SeaworldInheritance;
         };
         return MovingObject;
     }());
-    L11_SeaworldInheritance.MovingObject = MovingObject;
-})(L11_SeaworldInheritance || (L11_SeaworldInheritance = {}));
+    Spaceworld.MovingObject = MovingObject;
+})(Spaceworld || (Spaceworld = {}));
 //# sourceMappingURL=MovingObject.js.map

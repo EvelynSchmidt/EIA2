@@ -3,45 +3,41 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var L11_SeaworldInheritance;
-(function (L11_SeaworldInheritance) {
+var Spaceworld;
+(function (Spaceworld) {
     var UFO = (function (_super) {
         __extends(UFO, _super);
         function UFO() {
             _super.call(this);
             this.setRandomPosition();
-            this.setRandomRadius();
         }
         UFO.prototype.setRandomPosition = function () {
-            this.x = Math.random() * L11_SeaworldInheritance.canvas.width - 200;
-            this.y = Math.random() * L11_SeaworldInheritance.canvas.height - 200;
-        };
-        UFO.prototype.setRandomRadius = function () {
-            this.radius = Math.random() * 10;
+            this.x = Math.random() * Spaceworld.canvas.width - 200;
+            this.y = Math.random() * Spaceworld.canvas.height - 200;
         };
         UFO.prototype.draw = function () {
             var img = new Image();
             img.src = 'UFO.png';
-            L11_SeaworldInheritance.crc2.drawImage(img, this.x, this.y, 200, 200);
+            Spaceworld.crc2.drawImage(img, this.x, this.y, 200, 200);
         };
         UFO.prototype.move = function () {
             this.x -= Math.random() + 13;
             this.y += Math.random() * 3;
-            if (this.x > L11_SeaworldInheritance.canvas.width) {
+            if (this.x > Spaceworld.canvas.width) {
                 this.x = 0;
             }
             if (this.x < 0) {
-                this.x = L11_SeaworldInheritance.canvas.width;
+                this.x = Spaceworld.canvas.width;
             }
-            if (this.y > L11_SeaworldInheritance.canvas.height) {
+            if (this.y > Spaceworld.canvas.height) {
                 this.y = 0;
             }
             if (this.y < 0) {
-                this.y = L11_SeaworldInheritance.canvas.height;
+                this.y = Spaceworld.canvas.height;
             }
         };
         return UFO;
-    }(L11_SeaworldInheritance.MovingObject));
-    L11_SeaworldInheritance.UFO = UFO;
-})(L11_SeaworldInheritance || (L11_SeaworldInheritance = {})); //namespace zu
+    }(Spaceworld.MovingObject));
+    Spaceworld.UFO = UFO;
+})(Spaceworld || (Spaceworld = {})); //namespace zu
 //# sourceMappingURL=UFO.js.map

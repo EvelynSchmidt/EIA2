@@ -1,10 +1,13 @@
-namespace L11_SeaworldInheritance {
+namespace Spaceworld {
     export class MovingObject {
         x: number;
         y: number;
         
      
-       
+        checkPosition(): void {
+            //    
+        }
+        
         move(): void {
             //
         }
